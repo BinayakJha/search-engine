@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgb(240, 245, 247);
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        input[type="text"] {
+            width: 30%;
+            padding: 10px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            padding: 10px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .title {
+            font-weight: 400;
+            margin: 1.5rem 0px 0.5rem;
+            padding: 0.5em 0px 0.25em;
+            line-height: 1;
+        }
+
+        .container-80 {
+            max-width: 1400px;
+            padding-left: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>Jha Search</h1>
+        <form method="GET">
+            <input type="text" , name="query" id='query' placeholder="Search Here...."><br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        {% if data %}
+    </div>
+    <div class="container-80">
+        {% for item in data %}
+        <style>
+            .snippet {
+                padding-top: 1.2rem;
+                padding-right: 22px;
+                padding-bottom: 1.7rem;
+                padding-left: 22px;
+                background-color: white;
+                max-width: 672px;
+                border-radius: 12px;
+                padding-bottom: 2rem;
+                margin-bottom: -1.2rem;
+            }
+
+            a {
+                outline: none !important;
+                color: #1841D2;
+                text-decoration: none;
+            }
+
+            .snippet-title {
+                font-family: 'Poppins', arial, sans-serif;
+                text-rendering: optimizeLegibility;
+                font-size: 1.56rem;
+                line-height: 30px;
+                letter-spacing: -0.02em;
+                color: #1841D2;
+                position: relative;
+                text-decoration: none;
+                word-wrap: break-word;
+                font-weight: 400;
+                display: block;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .favicon {
+                height: 24px;
+                width: 25px;
+                object-fit: cover;
+                margin-right: 7px;
+                border-radius: 4px;
+                color: #1b1b1b;
+                font-size: 15px;
+                text-align: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px;
+                vertical-align: middle;
+                background-color: #ffffff;
+                display: inline-block;
+            }
+
+            .snippet-url {
+                display: flex;
+                align-items: center;
+                max-width: 90%;
+                font-size: 0.96rem;
+                color: #545c80;
+                text-rendering: optimizeLegibility;
+                font-style: normal;
+                padding: 1.2rem 0 1.3rem;
+            }
+
+            .netloc {
+                color: #6d78a0;
+                font-weight: 500;
+                white-space: nowrap;
+                text-decoration: underline;
+            }
+
+            .url-path {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-decoration: underline;
+            }
+
+            .snippet-description {
+                font-size: 1rem;
+                font-weight: 400;
+                color: black;
+                margin-bottom: 0;
+                word-wrap: break-word;
+                letter-spacing: -0.008em;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        </style>
+        <div class="snippet fdb" data-loc="main" data-pos="0" data-type="web" data-ref-pos="0">
+            <a href="https://www.youtube.com/watch?v=YQHsXMglC9A" class="result-header" target="_self">
+                <span class="snippet-title"><img alt="🌐" class="favicon"
+                        src="{{ item.favicon }}"
+                        loading="lazy" width="16" height="16">{{ item.title }}
+                </span>
+            </a>
+            <cite class="snippet-url">
+                <span class="netloc"><a href='{{ item.link }}' style="color: #6d78a0;">{{ item.cite }}</a></span>
+            </cite>
+            <p class="snippet-description">
+                {{ item.text }}
+            </p>
+
+
+    </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+
+</body>
+
+</html>
