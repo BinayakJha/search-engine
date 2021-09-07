@@ -5,28 +5,6 @@ from requests_html import HTMLSession
 import urllib
 # Create your views here.
 
-# def search_google(query):
-#     query = query.replace(" ", "+")
-#     url = f'https://www.google.com/search?q={query}'
-#     try:
-#         session = HTMLSession()
-#         response = session.get(url)
-     
-#     except requests.exceptions.RequestException as e:
-#         print(e)
-#     titles = response.html.find('.yuRUbf h3', first=True).text
-#     link = response.html.find('.yuRUbf a', first=True).attrs['href']
-#     text = response.html.find('.IsZvec', first=True).text
-#     results = response.html.find('.tF2Cxc', first=True).text
-#     output=[]
-#     for result in results:
-#        item = {
-#            'title': titles,
-#            'link': link,
-#            'text': text,
-#        }
-#        output.append(item)
-#     print(item)
 def get_source(url):
     try:
         session = HTMLSession()
@@ -84,7 +62,19 @@ def parse_results(response):
         data['link'] = result.find(css_identifier_link, first=True).attrs['href']
         data['favicon'] = "https://www.google.com/s2/favicons?sz=64&domain_url=" + data['link']
         data['text'] = result.find(css_identifier_text, first=True).text
+        # filter the links from the text
+        data['text'] = data['text'].replace(data['link'], '')
+        # cite functions
         data['cite'] = result.find(css_identifier_cite, first=True).text
+        data['cite'] = data['cite'].replace("https://", "")
+        data['cite'] = data['cite'].replace("http://", "")
+        data['cite'] = data['cite'].replace("www.", "")
+        # close cite functions
+        # youtube video image url
+        if "/watch?v" in data['link']:
+            link3 = data['link'][32:]
+            data['yt_url'] = f"https://i.ytimg.com/vi/{link3}/0.jpg"
+
         output.append(data)
     return output
 
@@ -95,9 +85,9 @@ def google_search(query):
 # home function
 
 def home(request):
+    results = None
     if 'query' in request.GET:
         # Fetch search data
-        query= request.GET.get('query')
-        results = google_search(query)
-        pass
+        query= request.GET['query']
+        results= google_search(query)
     return render(request, 'core/home.html',{'data':results})
