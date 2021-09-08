@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
     <title>Search Engine</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -35,15 +37,15 @@
             line-height: 1;
         }
 
-        .container-80 {
+        /* .container-80 {
             max-width: 1400px;
             padding-left: 175px;
             display: flex;
-        }
-        #results {
+        } */
+        /* #results {
             width: 681px;
             min-height: calc(100vh - 300px);
-        }
+        } */
 
         #side-right {
             width: 370px;
@@ -183,34 +185,19 @@
         .buttons {
             margin-top: 30px;
         }
+        @media (max-width: 990px) {
+            #side-right {
+                width: 89%;
+            }
+        }
+        @media screen and (min-width: 1200px){
+        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            max-width: 1212px !important;
+            margin-left: 179px;
+        }
+    }
 
         /* responsive */
-        @media screen and (max-width: 768px) {
-            .container-80 {
-            max-width: 1400px;
-            padding-left: 175px;
-            display: flex;
-            flex-direction: column-reverse;
-        }
-        #side-right {
-            width: 664px;
-        }
-        .infobox-header-text {
-            padding-right: 12.2rem;
-            padding-top: 2rem;
-        }
-        .infobox-thumbnail .thumb img {
-        height: 155px;
-        width: 250px;
-        object-fit: contain;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        border-radius: 8px;
-    }
-        }
     </style>
 
 </head>
@@ -229,190 +216,210 @@
         </form>
         <br>
     </div>
+
     
     {% if data %}
-    
-    <div class="container-80">
-        <!-- {% for item in data %}
-        <p>{{ item.featured_answer }}</p>
-        {% endfor %} -->
-        <div id="results" class="section">
-        {% for item in data %}
-        <style>
-            .snippet {
-                padding-top: 1.2rem;
-                padding-right: 22px;
-                padding-bottom: 1.7rem;
-                padding-left: 22px;
-                background-color: white;
-                max-width: 703px;
-                border-radius: 12px;
-                padding-bottom: 2rem;
-                margin-bottom: 0.8rem;
-            }
+<div class="container">
+        <div class="row">
+            <!-- {% for item in data %}
+            <p>{{ item.featured_answer }}</p>
+            {% endfor %} -->
+            <div id="result" class="section col-xs-12 col-sm-11 col-lg-7">
+            {% for item in data %}
+            <style>
+                .snippet {
+                    padding-top: 1.2rem;
+                    padding-right: 22px;
+                    padding-bottom: 1.7rem;
+                    padding-left: 22px;
+                    background-color: white;
+                    max-width: 703px;
+                    border-radius: 12px;
+                    padding-bottom: 2rem;
+                    margin-bottom: 0.8rem;
+                }
 
-            a {
-                outline: none !important;
-                color: #1841D2;
-                text-decoration: none;
-            }
+                a {
+                    outline: none !important;
+                    color: #1841D2;
+                    text-decoration: none;
+                }
 
-            .snippet-title {
-                font-family: 'Poppins', arial, sans-serif;
-                text-rendering: optimizeLegibility;
-                font-size: 1.26rem;
-                line-height: 30px;
-                letter-spacing: -0.02em;
-                color: #1841D2;
-                position: relative;
-                text-decoration: none;
-                word-wrap: break-word;
-                font-weight: 400;
-                display: block;
-                display: -webkit-box;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+                .snippet-title {
+                    font-family: 'Poppins', arial, sans-serif;
+                    text-rendering: optimizeLegibility;
+                    font-size: 1.26rem;
+                    line-height: 30px;
+                    letter-spacing: -0.02em;
+                    color: #1841D2;
+                    position: relative;
+                    text-decoration: none;
+                    word-wrap: break-word;
+                    font-weight: 400;
+                    display: block;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
 
-            .favicon {
-                height: 24px;
-                width: 25px;
-                object-fit: cover;
-                margin-right: 7px;
-                border-radius: 4px;
-                color: #1b1b1b;
-                font-size: 15px;
-                text-align: center;
-                overflow: hidden;
-                position: relative;
-                padding: 0px;
-                vertical-align: middle;
-                background-color: #ffffff;
-                display: inline-block;
-            }
+                .favicon {
+                    height: 24px;
+                    width: 25px;
+                    object-fit: cover;
+                    margin-right: 7px;
+                    border-radius: 4px;
+                    color: #1b1b1b;
+                    font-size: 15px;
+                    text-align: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px;
+                    vertical-align: middle;
+                    background-color: #ffffff;
+                    display: inline-block;
+                }
 
-            .snippet-url {
-                display: flex;
-                align-items: center;
-                max-width: 90%;
-                font-size: 0.96rem;
-                color: #545c80;
-                text-rendering: optimizeLegibility;
-                font-style: normal;
-                padding: 1.2rem 0 1.3rem;
-            }
+                .snippet-url {
+                    display: flex;
+                    align-items: center;
+                    max-width: 90%;
+                    font-size: 0.96rem;
+                    color: #545c80;
+                    text-rendering: optimizeLegibility;
+                    font-style: normal;
+                    padding: 1.2rem 0 1.3rem;
+                }
 
-            .netloc {
-                color: #6d78a0;
-                font-weight: 500;
-                white-space: nowrap;
-                text-decoration: none;
-            }
+                .netloc {
+                    color: #6d78a0;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    text-decoration: none;
+                }
 
-            .url-path {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                text-decoration: none;
-            }
+                .url-path {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-decoration: none;
+                }
 
-            .snippet-description {
-                font-size: 1rem;
-                font-weight: 400;
-                color: black;
-                margin-bottom: 0;
-                word-wrap: break-word;
-                letter-spacing: -0.008em;
-                display: -webkit-box;
-                -webkit-line-clamp: 6;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                display: flex;
+                .snippet-description {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: black;
+                    margin-bottom: 0;
+                    word-wrap: break-word;
+                    letter-spacing: -0.008em;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    display: flex;
+                }
+                /* .container, .container-lg, .container-md{
+                    max-width: 1206px !important;
+                    margin-left: 174px !important;
+                } */
+                @media screen and (min-width: 1400px){ 
+                .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                    max-width: 1212px !important;
+                }
+                /* @media (min-width: 768px){ 
+                .col-md-7 {
+                    flex: 0 0 auto;
+                    width: 63.333333%;
+                }
+                } */
+
+            
             }
-        </style>
-            <div class="snippet fdb" data-loc="main" data-pos="0" data-type="web" data-ref-pos="0">
-                <a href="{{ item.link }}" class="result-header" target="_self">
-                    <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}" loading="lazy"
-                            width="16" height="16">{{ item.title }}
-                    </span>
-                </a>
-                <cite class="snippet-url">
-                    <span class="netloc"><a href='{{ item.link }}' style="color: #6d78a0;">{{ item.cite }}</a></span>
-                </cite>
-                <p class="snippet-description">
-                    {{ item.text }}
-                    <!-- {% comment %} if /watch?v in url then show the image {% endcomment %} -->
-                    {% if 'watch?v' in item.link %}
-                    <img src="{{ item.yt_url }}" width="25%" height="100%" style="border-radius: 8px;">
-                    {% endif %}
-                </p>
+            </style>
+                <div class="snippet fdb " data-loc="main" data-pos="0" data-type="web" data-ref-pos="0">
+                    <a href="{{ item.link }}" class="result-header" target="_self">
+                        <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}" loading="lazy"
+                                width="16" height="16">{{ item.title }}
+                        </span>
+                    </a>
+                    <cite class="snippet-url">
+                        <span class="netloc"><a href='{{ item.link }}' style="color: #6d78a0;">{{ item.cite }}</a></span>
+                    </cite>
+                    <p class="snippet-description">
+                        {{ item.text }}
+                        <!-- {% comment %} if /watch?v in url then show the image {% endcomment %} -->
+                        {% if 'watch?v' in item.link %}
+                        <img src="{{ item.yt_url }}" width="25%" height="100%" style="border-radius: 8px;">
+                        {% endif %}
+                    </p>
+
+            </div>
+            {% endfor %}
+            
+        </div>
+        <!-- side bar -->
+        {% if data2 %}
+        {% for item2 in data2 %}
+        <div id="side-right" class="section col-md-5 col-sm-12">
+            <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox" data-subtype="generic" data-ref-pos="0">
+    <div class="infobox-header">
+    <div class="infobox-header-text">
+    <a class="infobox-title" href="{{ item2.links }}" target="_self">
+    {{ item2.title1 }}
+        </a>
+    <div class="infobox-description">
+        {{ item2.description }}
+    </div>
+        </div>
+    <div class="infobox-thumbnail">
+    <a href="/images?q=hello" target="_self">
+    <div class="thumb" >
+        <img src="{{ item2.image_url }}" alt="">
+    </div>
+    </a>
+    </div>
+    </div>
+
+
+    <div class="body">
+
+
+    <div class="mb-6">
+    {{ item2.big_description }}
+    </div>
+
+
+
+
+    </div>
+
+    <!-- rating -->
+
+    <center><h2>{{ item2.rating }}</h2></center>
+    <br>
+    <div class="rating" style="display:flex;padding:0px 20px;">
+
+        <img src="{{ item2.rating_image }}" alt="">
+        <!-- rating -->
+        <p style='padding:0px 20px;'>{{ item2.rating_text }}</p>
+    </div>
+    <div class="body">
+    <div class="attribution text-xs">
+    Data from
+    <a href="{{ item2.links }}">Wikipedia</a>
+    </div>
+    </div>
 
         </div>
-        {% endfor %}
-        
-    </div>
-    <!-- side bar -->
-    {% if data2 %}
-    {% for item2 in data2 %}
-    <div id="side-right" class="section">
-        <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox" data-subtype="generic" data-ref-pos="0">
-<div class="infobox-header">
-<div class="infobox-header-text">
-<a class="infobox-title" href="https://en.wikipedia.org/wiki/Hello_(Adele_song)" target="_self">
-{{ item2.title1 }}
-    </a>
-  <div class="infobox-description">
-    {{ item2.description }}
+        </div>
 </div>
-      </div>
-<div class="infobox-thumbnail">
-<a href="/images?q=hello" target="_self">
-<div class="thumb" >
-    <img src="{{ item2.image_url }}" alt="">
-</div>
-</a>
-</div>
-</div>
-
-
-<div class="body">
-
-
-  <div class="mb-6">
-{{ item2.big_description }}
-</div>
-
-
-
-
-</div>
-
-<!-- rating -->
-
-<center><h2>{{ item2.rating }}</h2></center>
-<br>
-<div class="rating" style="display:flex;padding:0px 20px;">
-
-    <img src="{{ item2.rating_image }}" alt="">
-    <!-- rating -->
-    <p style='padding:0px 20px;'>{{ item2.rating_text }}</p>
-</div>
-<div class="body">
-<div class="attribution text-xs">
-Data from
-<a href="{{ item2.links }}">Wikipedia</a>
-  </div>
-</div>
-
-    </div>
-    </div>
     {% endfor %}
     {% endif %}
 {% endif %}
 
-
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>
