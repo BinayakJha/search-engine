@@ -3,7 +3,6 @@ from django.shortcuts import render
 import requests
 from requests_html import HTMLSession
 import urllib
-import people_also_ask
 # Create your views here.
 
 # Get the source from the url function
