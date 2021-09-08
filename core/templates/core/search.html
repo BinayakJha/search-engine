@@ -123,57 +123,7 @@
             margin-bottom: 6px;
         }
        
-        .bar {
-            margin: -6px 53px;
-            width: 693px;
-            border-radius: 8px;
-            background-color: white;
-            border: 1px solid #dcdcdc;
-            box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
-            padding: 7px 18px;
-            max-width: inherit;
-        }
-
-        .bar:hover {
-            box-shadow: 1px 1px 8px 1px #dcdcdc;
-        }
-
-        .bar:focus-within {
-            box-shadow: 1px 1px 8px 1px #dcdcdc;
-            outline: none;
-        }
-
-        .searchbar {
-            height: 45px;
-            border: none;
-            width: 500px;
-            font-size: 16px;
-            outline: none;
-        }
-
-        .voice {
-            height: 20px;
-            position: relative;
-            top: 5px;
-            left: 10px;
-        }
-
-        #submit-button {
-            border: none;
-            margin: 0px 0px 0px 95px;
-            padding: 14px 20px;
-            border-radius: 8px;
-            background-color: white;
-            cursor: pointer;
-            width: 38px;
-            height: 49px;
-        }
-
-        #submit-button:hover {
-            background: linear-gradient(302.53deg, #4c54d2 0%, #bf14a2 56.25%, #f73a1c 100%);
-            color: white;
-        }
-
+ 
         .fa-search {
             font-size: 20px;
             color: red;
@@ -209,17 +159,111 @@
 </head>
 
 <body>
+    <style>
+        .searchform-container {
+          margin-left: 0;
+          width: 100%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+      }
+        #searchform {
+          position: relative;
+          display: flex;
+          margin-bottom: 10px;
+          max-width: inherit;
+          align-items: center;
+          z-index: 3;
+          height: 56px !important;
+          width: 90%;
+          border: 1px solid transparent;
+          border-radius: 8px;
+          box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+          background-color: white;
+      }
+      #search-icon.no-display {
+          display: flex !important;
+      }
+      #search-icon {
+          opacity: 0.5 !important;
+          background: white !important;
+      }
+      #search-icon, #back-arrow {
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          min-width: 46px !important;
+          order: 1;
+          z-index: 3;
+          color: #7c8086;
+      }
+      #query {
+          flex-grow: 1;
+          width: auto;
+          height: 100%;
+          order: 2;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          color: #27292f;
+          background-color: white;
+          border-radius: 8px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          padding: 8px 18px;
+          padding-left: 0px !important;
+      }
+      .form-input {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: #fff;
+          background-image: none;
+          border: .05rem solid #bcc3ce;
+          border-radius: .1rem;
+          color: #3b4351;
+          display: block;
+          font-size: .8rem;
+          height: 1.8rem;
+          line-height: 1.2rem;
+          max-width: 100%;
+          outline: 0;
+          padding: .25rem .4rem;
+          position: relative;
+          transition: .2s,border .2s,box-shadow .2s,color .2s;
+          width: 100%;
+      }
+      @media screen and (min-width: 1000px) {
+          .searchform-container {
+              padding-left: 4rem;
+              padding-right: 5rem;
+          }
+          #searchform {
+              width: 62%;
+              box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+          }
+      }
+          
+      </style>
     <div id="main">
         <h1>LOGO</h1>
-        <form method="GET" action="/search">
-            <div class="bar">
-                <input class="searchbar" name="query" id='query' placeholder="Search Here...."
-                    value="{{ request.GET.query}}">
-                <button id="submit-button" class="btn btn--filled input-group-btn">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </div>
-        </form>
+        <div class="searchform-container">
+            <form class="form" action="/search" method="GET" id="searchform">
+                  <span id="search-icon" class="no-display">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z" fill="url(#paint0_linear)"></path>
+                          <defs>
+                            <linearGradient id="paint0_linear" x1="16.6209" y1="16.6208" x2="-1.90605" y2="3.18655" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF14A2"></stop>
+                            <stop offset="1" stop-color="#F73A1C"></stop>
+                            </linearGradient>
+                          </defs>
+                  </svg>
+              </span>
+              <input name="query" id='query' type="text" class="form-input" placeholder="Search the without being tracked…" name="q" value="{{ request.GET.query}}" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Search" title="Search" aria-autocomplete="both" aria-haspopup="false" maxlength="2048" autofocus="">
+              <input name="source" value="web" type="hidden">
+             <div id="autocomplete" class=" svelte-ir7f0d"></div></form>
+          </div>
         <br>
     </div>
 
@@ -408,7 +452,7 @@
     <br>
     <div class="rating" style="display:flex;padding:0px 20px;">
 
-        <img src="{{ item2.rating_image }}" alt="" style="width: 40px;height: 40px;">
+        <img src="{{ item2.rating_image }}" alt="" style="width:40px;height: 40px;">
         <!-- rating -->
         <p style='padding:0px 20px;'>{{ item2.rating_text }}</p>
     </div>
