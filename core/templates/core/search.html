@@ -201,8 +201,13 @@
         </form>
         <br>
     </div>
+    
     {% if data %}
+    
     <div class="container-80">
+        <!-- {% for item in data %}
+        <p>{{ item.featured_answer }}</p>
+        {% endfor %} -->
         <div id="results" class="section">
         {% for item in data %}
         <style>
@@ -318,6 +323,7 @@
 
         </div>
         {% endfor %}
+        
     </div>
     <!-- side bar -->
     {% if data2 %}

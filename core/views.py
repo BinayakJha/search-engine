@@ -1,10 +1,13 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from django.shortcuts import render
 import requests
 from requests_html import HTMLSession
 import urllib
+import people_also_ask
 # Create your views here.
 
+# Get the source from the url function
+# ------------------------------------------------------------------------------------
 def get_source(url):
     try:
         session = HTMLSession()
@@ -13,7 +16,10 @@ def get_source(url):
 
     except requests.exceptions.RequestException as e:
         print(e)
+# ------------------------------------------------------------------------------------
 
+# Scraping Google Search
+# ------------------------------------------------------------------------------------
 def scrape_google(query):
 
     query = urllib.parse.quote_plus(query)
@@ -33,8 +39,9 @@ def scrape_google(query):
             links.remove(url)
 
     return links
-
-
+# ------------------------------------------------------------------------------------
+# getting results from the search
+# ------------------------------------------------------------------------------------
 def get_results(query):
 
     query = urllib.parse.quote_plus(query)
@@ -48,6 +55,9 @@ def brave_results(query):
     # replace whitespace with +
     query = query.replace(" ", "+")
     return response2
+# ------------------------------------------------------------------------------------
+# parsing results 
+# ------------------------------------------------------------------------------------
 
 def parse_results(response):
     css_identifier_result = ".tF2Cxc"
@@ -80,21 +90,23 @@ def parse_results(response):
             link3 = data['link'][32:]
             data['yt_url'] = f"https://i.ytimg.com/vi/{link3}/0.jpg"
         output.append(data)
-
+    # data['featured_answer'] = people_also_ask.get_simple_answer('2+2')
     return output
-
+# ------------------------------------------------------------------------------------
+# dooing google search
+# ------------------------------------------------------------------------------------
 def google_search(query):
     response = get_results(query)
     return parse_results(response)
-
+# ------------------------------------------------------------------------------------
 
 # home function
-
+# ------------------------------------------------------------------------------------
 def home(request):
     return render(request, 'core/home.html')
-
+# ------------------------------------------------------------------------------------
 # brave search
-
+# ------------------------------------------------------------------------------------
 def brave_search(response2):
     output2 = []
     results2 = response2.html.find('#side-right')
@@ -121,19 +133,24 @@ def brave_search(response2):
 
             except requests.exceptions.RequestException as e:
                 print(e)
-
-            data2['image_url'] = response3.html.find('.infobox-image img')[0].attrs['src']
-
+            try:
+                data2['image_url'] = response3.html.find('.infobox-image img')[0].attrs['src']
+            except:
+                data2['image_url'] = response3.html.find('.thumbinner img')[0].attrs['src']
         except:
             pass
         output2.append(data2)
     return output2
-# search function
+# ------------------------------------------------------------------------------------
+
+# brave search function
+# ------------------------------------------------------------------------------------
 def search_1(query):
     response2 = brave_results(query)
     return brave_search(response2)
-
-
+# ------------------------------------------------------------------------------------
+# main search function
+# ------------------------------------------------------------------------------------
 def search(request):
     results = None
     brave__results = None
@@ -146,8 +163,6 @@ def search(request):
             brave__results = search_1(query)
         except:
             pass
-            
-    # return render(request, 'core/search.html', {'data': results})
-    return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
 
-# brave search 
+    return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
+# ------------------------------------------------------------------------------------
