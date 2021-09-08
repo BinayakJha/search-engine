@@ -42,7 +42,12 @@ def get_results(query):
     # replace whitespace with +
     query = query.replace(" ", "+")
     return response
-
+def brave_results(query):
+    query = urllib.parse.quote_plus(query)
+    response2 = get_source("https://search.brave.com/search?q=" + query)
+    # replace whitespace with +
+    query = query.replace(" ", "+")
+    return response2
 
 def parse_results(response):
     css_identifier_result = ".tF2Cxc"
@@ -74,20 +79,75 @@ def parse_results(response):
         if "/watch?v" in data['link']:
             link3 = data['link'][32:]
             data['yt_url'] = f"https://i.ytimg.com/vi/{link3}/0.jpg"
-
         output.append(data)
+
     return output
 
 def google_search(query):
     response = get_results(query)
     return parse_results(response)
 
+
 # home function
 
 def home(request):
+    return render(request, 'core/home.html')
+
+# brave search
+
+def brave_search(response2):
+    output2 = []
+    results2 = response2.html.find('#side-right')
+    for result2 in results2:
+        data2 = dict()
+        data2['title1'] = result2.find('.infobox-title', first=True).text
+        data2['description'] = result2.find('.infobox-description', first=True).text
+        data2['big_description'] = result2.find('.body .mb-6', first=True).text
+        data2['links'] = result2.find('.links a', first=True).attrs['href']
+        try:
+            data2['rating'] = result2.find('.h6', first=True).text
+            data2['rating_image'] = result2.find('.rating-source', first=True).attrs['src']
+            data2['rating_text'] = result2.find('.r .flex-hcenter .text-sm', first=True).text
+        except:
+            pass
+         # wikipedia image scraping
+        try:
+            # image
+            img_url = data2['links']
+
+            try:
+                session = HTMLSession()
+                response3 = session.get(img_url)
+
+            except requests.exceptions.RequestException as e:
+                print(e)
+
+            data2['image_url'] = response3.html.find('.infobox-image img')[0].attrs['src']
+
+        except:
+            pass
+        output2.append(data2)
+    return output2
+# search function
+def search_1(query):
+    response2 = brave_results(query)
+    return brave_search(response2)
+
+
+def search(request):
     results = None
+    brave__results = None
     if 'query' in request.GET:
         # Fetch search data
         query= request.GET['query']
         results= google_search(query)
-    return render(request, 'core/home.html',{'data':results})
+        # Fetch brave data
+        try:
+            brave__results = search_1(query)
+        except:
+            pass
+            
+    # return render(request, 'core/search.html', {'data': results})
+    return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
+
+# brave search 

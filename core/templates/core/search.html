@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgb(240, 245, 247);
+        }
+
+        #main {
+            /* text-align: center; */
+            padding-top: 40px;
+            display: flex;
+            padding-left: 23px;
+        }
+
+        .title {
+            font-weight: 400;
+            margin: 1.5rem 0px 0.5rem;
+            padding: 0.5em 0px 0.25em;
+            line-height: 1;
+        }
+
+        .container-80 {
+            max-width: 1400px;
+            padding-left: 175px;
+            display: flex;
+        }
+        #results {
+            max-width: 681px;
+            width: 100%;
+            min-height: calc(100vh - 300px);
+        }
+
+        #side-right {
+            width: 370px;
+        }
+        .section {
+            margin-top: 74px;
+            margin-bottom: 15px;
+        }
+        .section:last-child {
+            margin-left: 2vw;
+        }
+        .infobox {
+            border: none;
+            border: solid 0px #E2E8ED;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
+            padding: 0px;
+        }
+        .infobox-header {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding: 0.8rem;
+        }
+        .infobox-header-text {
+            padding-right: 1.2rem;
+        }
+        .infobox-title {
+            font-size: 22px;
+            font-family: 'Poppins', arial, sans-serif;
+            color: #27292f;
+            line-height: 1.2;
+            word-break: break-all;
+            padding: 21px;
+        }
+        .infobox-description {
+            color: #5A626D;
+            margin-top: 0.6rem;
+            font-size: 0.66rem;
+            padding: 0px 20px;
+        }
+        .infobox-thumbnail .thumb  img {
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+        }
+        .infobox .body {
+            font-size: 0.86rem;
+            color: #5A626D;
+            padding: 0.8rem;
+        }
+        #infobox .infobox-attr {
+            font-size: 0.76rem;
+            margin-bottom: 5px;
+            color: #27292f;
+            display: flex;
+        }
+        .infobox-attr-name {
+            min-width: 150px;
+            max-width: 150px;
+            font-weight: 500;
+        }
+
+        .mb-6 {
+            margin-bottom: 6px;
+        }
+       
+        .bar {
+            margin: -6px 53px;
+            width: 693px;
+            border-radius: 8px;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+            padding: 7px 18px;
+            max-width: inherit;
+        }
+
+        .bar:hover {
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+        }
+
+        .bar:focus-within {
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+            outline: none;
+        }
+
+        .searchbar {
+            height: 45px;
+            border: none;
+            width: 500px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .voice {
+            height: 20px;
+            position: relative;
+            top: 5px;
+            left: 10px;
+        }
+
+        #submit-button {
+            border: none;
+            margin: 0px 0px 0px 95px;
+            padding: 14px 20px;
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+            width: 38px;
+            height: 49px;
+        }
+
+        #submit-button:hover {
+            background: linear-gradient(302.53deg, #4c54d2 0%, #bf14a2 56.25%, #f73a1c 100%);
+            color: white;
+        }
+
+        .fa-search {
+            font-size: 20px;
+            color: red;
+        }
+
+        .fa-search:hover {
+            color: white;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <h1>LOGO</h1>
+        <form method="GET" action="/search">
+            <div class="bar">
+                <input class="searchbar" name="query" id='query' placeholder="Search Here...."
+                    value="{{ request.GET.query}}">
+                <button id="submit-button" class="btn btn--filled input-group-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+    {% if data %}
+    <div class="container-80">
+        <div id="results" class="section">
+        {% for item in data %}
+        <style>
+            .snippet {
+                padding-top: 1.2rem;
+                padding-right: 22px;
+                padding-bottom: 1.7rem;
+                padding-left: 22px;
+                background-color: white;
+                max-width: 703px;
+                border-radius: 12px;
+                padding-bottom: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            a {
+                outline: none !important;
+                color: #1841D2;
+                text-decoration: none;
+            }
+
+            .snippet-title {
+                font-family: 'Poppins', arial, sans-serif;
+                text-rendering: optimizeLegibility;
+                font-size: 1.26rem;
+                line-height: 30px;
+                letter-spacing: -0.02em;
+                color: #1841D2;
+                position: relative;
+                text-decoration: none;
+                word-wrap: break-word;
+                font-weight: 400;
+                display: block;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .favicon {
+                height: 24px;
+                width: 25px;
+                object-fit: cover;
+                margin-right: 7px;
+                border-radius: 4px;
+                color: #1b1b1b;
+                font-size: 15px;
+                text-align: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px;
+                vertical-align: middle;
+                background-color: #ffffff;
+                display: inline-block;
+            }
+
+            .snippet-url {
+                display: flex;
+                align-items: center;
+                max-width: 90%;
+                font-size: 0.96rem;
+                color: #545c80;
+                text-rendering: optimizeLegibility;
+                font-style: normal;
+                padding: 1.2rem 0 1.3rem;
+            }
+
+            .netloc {
+                color: #6d78a0;
+                font-weight: 500;
+                white-space: nowrap;
+                text-decoration: none;
+            }
+
+            .url-path {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-decoration: none;
+            }
+
+            .snippet-description {
+                font-size: 1rem;
+                font-weight: 400;
+                color: black;
+                margin-bottom: 0;
+                word-wrap: break-word;
+                letter-spacing: -0.008em;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                display: flex;
+            }
+        </style>
+            <div class="snippet fdb" data-loc="main" data-pos="0" data-type="web" data-ref-pos="0">
+                <a href="{{ item.link }}" class="result-header" target="_self">
+                    <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}" loading="lazy"
+                            width="16" height="16">{{ item.title }}
+                    </span>
+                </a>
+                <cite class="snippet-url">
+                    <span class="netloc"><a href='{{ item.link }}' style="color: #6d78a0;">{{ item.cite }}</a></span>
+                </cite>
+                <p class="snippet-description">
+                    {{ item.text }}
+                    <!-- {% comment %} if /watch?v in url then show the image {% endcomment %} -->
+                    {% if 'watch?v' in item.link %}
+                    <img src="{{ item.yt_url }}" width="25%" height="100%" style="border-radius: 8px;">
+                    {% endif %}
+                </p>
+
+        </div>
+        {% endfor %}
+    </div>
+    <!-- side bar -->
+    {% if data2 %}
+    {% for item2 in data2 %}
+    <div id="side-right" class="section">
+        <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox" data-subtype="generic" data-ref-pos="0">
+<div class="infobox-header">
+<div class="infobox-header-text">
+<a class="infobox-title" href="https://en.wikipedia.org/wiki/Hello_(Adele_song)" target="_self">
+{{ item2.title1 }}
+    </a>
+  <div class="infobox-description">
+    {{ item2.description }}
+</div>
+      </div>
+<div class="infobox-thumbnail">
+<a href="/images?q=hello" target="_self">
+<div class="thumb" >
+    <img src="{{ item2.image_url }}" alt="">
+</div>
+</a>
+</div>
+</div>
+
+
+<div class="body">
+
+
+  <div class="mb-6">
+{{ item2.big_description }}
+</div>
+
+
+
+
+</div>
+
+<!-- rating -->
+
+<center><h2>{{ item2.rating }}</h2></center>
+<br>
+<div class="rating" style="display:flex;padding:0px 20px;">
+
+    <img src="{{ item2.rating_image }}" alt="">
+    <!-- rating -->
+    <p style='padding:0px 20px;'>{{ item2.rating_text }}</p>
+</div>
+<div class="body">
+<div class="attribution text-xs">
+Data from
+<a href="{{ item2.links }}">Wikipedia</a>
+  </div>
+</div>
+
+</div>
+    </div>
+    {% endfor %}
+    {% endif %}
+{% endif %}
+
+
+</body>
+
+</html>
