@@ -76,6 +76,7 @@ def parse_results(response):
         data['link'] = result.find(css_identifier_link, first=True).attrs['href']
         data['favicon'] = "https://www.google.com/s2/favicons?sz=64&domain_url=" + data['link']
         data['text'] = result.find(css_identifier_text, first=True).text
+        # data['text2'] = data['text'].replace("\n", "")
         # filter the links from the text
         data['text'] = data['text'].replace(data['link'], '')
         # cite functions
