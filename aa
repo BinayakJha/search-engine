@@ -1,0 +1,22 @@
+var form = document.getElementById("searchform");
+var searchicon = document.getElementById("search-icon");
+var query = document.getElementById("query");
+
+form.classList.toggle("dark-input");
+searchicon.classList.toggle("dark-search-icon");
+query.classList.toggle("dark-query");
+for (var i = 0; i < document.getElementsByClassName("snippet").length; i++) {
+    document.getElementsByClassName("snippet")[i].classList.toggle("dark-snippet");
+}
+for (var i = 0; i < document.getElementsByClassName("snippet-title").length; i++) {
+    document.getElementsByClassName("snippet-title")[i].classList.toggle("dark-title");
+}
+for (var n = 0; n < document.getElementsByClassName("snippet-description").length; n++) {
+    document.getElementsByClassName("snippet-description")[n].classList.toggle("dark-text");
+}
+document.getElementsByClassName("infobox-title")[0].classList.toggle("dark-text");
+document.getElementsByClassName("infobox-description")[0].classList.toggle("dark-text");
+document.getElementsByClassName("body")[0].classList.toggle("dark-text");
+document.getElementById("source").classList.toggle("dark-title");
+document.getElementById("infobox").classList.toggle("dark-snippet");
+console.log("dark mode toggled")

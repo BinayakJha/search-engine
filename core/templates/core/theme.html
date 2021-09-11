@@ -5,83 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        :root {
+            --page-background:  rgb(240, 245, 247);
+            --page-color: black;
+            --search-form: #fff;
+            --snippet-color: white;
+            --link-color: #1841D2;
+        }
         #theme-toggler{
-        position: sticky;
+        position: fixed;
         top: 90vh;
         right: 5vw;
         font-size: 48px;
         text-align: right;
         cursor: pointer;
+        color:var(--page-color);
       }
       .dark-theme{
-            background-color: rgb(14 14 14) !important;
+            /* background-color: rgb(14 14 14) !important;
             color: white !important;
-            transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out; */
+            --page-background:  rgb(14 14 14);
+            --page-color: white;
+            --search-form: #242731 !important;
+            --snippet-color: #242731 !important;
+            --link-color: #597cf9 !important;
         }
-        .dark-input{
-            background-color: #242731 !important;
-            color: white !important;
-            transition: 0.3s ease-in-out;
-        }
-        .dark-search-icon{
-            background: #242731 !important;
-            transition: 0.7s ease-in-out !important;
-        }
-        .dark-query{
-            background-color: #242731 !important;
-            color: white !important;
-            transition: 0.1s ease-in-out;
-        }
-        .dark-snippet{
-            background-color: #242731 !important;
-            color: white !important;
-            transition: 0.3s ease-in-out;
-        }
-        .dark-text{
-            color: white !important;
-            transition: 0.3s ease-in-out;
-        }
-        .dark-title{
-            color: #597cf9 !important;
-            transition: 0.3s ease-in-out;
-        }
+        
     </style>
 </head>
 <body>
-      <!-- theme toggler button -->
-      <div id="theme-toggler">
-        <div class="theme-toggler1" onclick="darktheme()">◐</div>
-    </div>
 
-        <span class="slider round"></span>
+
+    <div id="theme-toggler">
+        <div class="theme-toggler1" onclick="themeToggle()">◐</div>
+    </div>
+<div id="theme"></div>
+  
 <script>
-    function darktheme() {
-        var body = document.body;
-        var form = document.getElementById("searchform");
-        var searchicon = document.getElementById("search-icon");
-        var query = document.getElementById("query");
-        
-        body.classList.toggle("dark-theme");
-        form.classList.toggle("dark-input");
-        searchicon.classList.toggle("dark-search-icon");
-        query.classList.toggle("dark-query");
-        for (var i = 0; i < document.getElementsByClassName("snippet").length; i++) {
-            document.getElementsByClassName("snippet")[i].classList.toggle("dark-snippet");
-        }
-        for (var i = 0; i < document.getElementsByClassName("snippet-title").length; i++) {
-            document.getElementsByClassName("snippet-title")[i].classList.toggle("dark-title");
-        }
-        for (var n = 0; n < document.getElementsByClassName("snippet-description").length; n++) {
-            document.getElementsByClassName("snippet-description")[n].classList.toggle("dark-text");
-        }
-        document.getElementsByClassName("infobox-title")[0].classList.toggle("dark-text");
-        document.getElementsByClassName("infobox-description")[0].classList.toggle("dark-text");
-        document.getElementsByClassName("body")[0].classList.toggle("dark-text");
-        document.getElementById("source").classList.toggle("dark-title");
-        document.getElementById("infobox").classList.toggle("dark-snippet");
-        console.log("dark mode toggled");
-    }
+// On page load set the theme.
+(function() {
+  let onpageLoad = localStorage.getItem("theme") || "";
+  let element = document.body;
+  element.classList.add(onpageLoad);
+//   document.getElementById("theme").textContent =
+//     localStorage.getItem("theme");
+})();
+
+function themeToggle() {
+  let element = document.body;
+  element.classList.toggle("dark-theme");
+
+  let theme = localStorage.getItem("theme");
+  if (theme && theme === "dark-theme") {
+    localStorage.setItem("theme", "");
+  } else {
+    localStorage.setItem("theme", "dark-theme");
+  }
+
+ 
+}
 </script>
 </body>
 </html>

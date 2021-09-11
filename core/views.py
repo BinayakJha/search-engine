@@ -3,6 +3,7 @@ from django.shortcuts import render
 import requests
 from requests_html import HTMLSession
 import urllib
+import concurrent.futures
 # Create your views here.
 
 # Get the source from the url function
@@ -48,6 +49,9 @@ def get_results(query):
     # replace whitespace with +
     query = query.replace(" ", "+")
     return response
+
+
+
 def brave_results(query):
     query = urllib.parse.quote_plus(query)
     response2 = get_source("https://search.brave.com/search?q=" + query)
@@ -92,6 +96,8 @@ def parse_results(response):
         output.append(data)
     # data['featured_answer'] = people_also_ask.get_simple_answer('2+2')
     return output
+
+
 # ------------------------------------------------------------------------------------
 # dooing google search
 # ------------------------------------------------------------------------------------
@@ -141,6 +147,7 @@ def brave_search(response2):
             pass
         output2.append(data2)
     return output2
+
 # ------------------------------------------------------------------------------------
 # brave search function
 # ------------------------------------------------------------------------------------
@@ -157,6 +164,7 @@ def search(request):
         # Fetch search data
         query= request.GET['query']
         results= google_search(query)
+
         # Fetch brave data
         try:
             brave__results = search_1(query)
