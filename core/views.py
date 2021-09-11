@@ -3,7 +3,7 @@ from django.shortcuts import render
 import requests
 from requests_html import HTMLSession
 import urllib
-import concurrent.futures
+import replit
 # Create your views here.
 
 # Get the source from the url function
@@ -170,6 +170,7 @@ def search(request):
             brave__results = search_1(query)
         except:
             pass
+    replit.clear()
 
     return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
 # ------------------------------------------------------------------------------------
