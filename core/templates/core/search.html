@@ -419,7 +419,7 @@
 
     <!-- rating -->
 
-    <center><h2>{{ item2.rating }}</h2></center>
+    <center><h2 style="color:var(--page-color)">{{ item2.rating }}</h2></center>
     <br>
     <div class="rating" style="display:flex;padding:0px 20px;">
         {% if item2.rating_image%}
@@ -428,7 +428,7 @@
         <p></p>
         {% endif %}
          <!-- rating -->
-        <p style='padding:0px 20px;'>{{ item2.rating_text }}</p>
+        <p style='padding:0px 20px; color:var(--page-color);'>{{ item2.rating_text }}</p>
     </div>
     <div class="body">
     <div class="attribution text-xs">
