@@ -406,7 +406,7 @@
     </div>
         </div>
     <div class="infobox-thumbnail">
-    <a href="/images?q=hello" target="_self">
+    <a href="{{ item2.image_url }}" target="_self">
     <div class="thumb" >
         <img src="{{ item2.image_url }}" alt="">
     </div>
@@ -417,13 +417,9 @@
 
     <div class="body">
 
-
     <div class="mb-6">
     {{ item2.big_description }}
     </div>
-
-
-
 
     </div>
 
@@ -432,9 +428,12 @@
     <center><h2>{{ item2.rating }}</h2></center>
     <br>
     <div class="rating" style="display:flex;padding:0px 20px;">
-
-        <img src="{{ item2.rating_image }}" alt="" class="favicon" loading="lazy" width='40' height='40'>
-        <!-- rating -->
+        {% if item2.rating_image%}
+        <img src="{{ item2.rating_image }}" alt="" class="favicon" width='40' height='40'>
+        {% else %}
+        <p></p>
+        {% endif %}
+         <!-- rating -->
         <p style='padding:0px 20px;'>{{ item2.rating_text }}</p>
     </div>
     <div class="body">
