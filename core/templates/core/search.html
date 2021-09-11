@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+{% include './theme.html' %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +20,7 @@
         body {
             background-color: rgb(240, 245, 247);
             overflow-x: hidden;
+            transition: 0.3s;
         }
 
         #main {
@@ -167,13 +166,16 @@
           border-radius: 8px;
           box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
           background-color: white;
+          transition: all 0.1s ease-in-out;
       }
       #search-icon.no-display {
           display: flex !important;
+          transition: all 0.1s ease-in-out;
       }
       #search-icon {
           opacity: 0.5 !important;
-          background: white !important;
+          background: transparent !important;
+          transition: all 0.1s ease-in-out;
       }
       #search-icon, #back-arrow {
           display: flex;
@@ -184,6 +186,7 @@
           order: 1;
           z-index: 3;
           color: #7c8086;
+          transition: all 0.1s ease-in-out;
       }
       #query {
           flex-grow: 1;
@@ -200,6 +203,7 @@
           border-bottom-left-radius: 10px;
           padding: 8px 18px;
           padding-left: 0px !important;
+          transition: all 0.1s ease-in-out;
       }
       .form-input {
           -webkit-appearance: none;
@@ -220,6 +224,7 @@
           position: relative;
           transition: .2s,border .2s,box-shadow .2s,color .2s;
           width: 100%;
+          transition: all 0.1s ease-in-out;
       }
       @media screen and (min-width: 1000px) {
           .searchform-container {
@@ -275,6 +280,7 @@
                     border-radius: 12px;
                     padding-bottom: 2rem;
                     margin-bottom: 0.8rem;
+                    transition: 0.3s;
                 }
 
                 a {
@@ -315,7 +321,7 @@
                     position: relative;
                     padding: 0px;
                     vertical-align: middle;
-                    background-color: #ffffff;
+                    background-color: transparent;
                     display: inline-block;
                 }
 
@@ -365,7 +371,7 @@
                        
             }
             </style>
-                <div class="snippet fdb " data-loc="main" data-pos="0" data-type="web" data-ref-pos="0">
+                <div class="snippet fdb " data-loc="main" data-pos="0" data-type="web" data-ref-pos="0" id="snippets">
                     <a href="{{ item.link }}" class="result-header" target="_self">
                         <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}" loading="lazy"
                                 width="16" height="16">{{ item.title }}
@@ -435,7 +441,7 @@
     <div class="body">
     <div class="attribution text-xs">
     Data from
-    <a href="{{ item2.links }}">Wikipedia</a>
+    <a href="{{ item2.links }}" id="source">Wikipedia</a>
     </div>
     </div>
 
