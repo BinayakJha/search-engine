@@ -95,6 +95,7 @@ def parse_results(response):
             data['yt_url'] = f"https://i.ytimg.com/vi/{link3}/0.jpg"
         output.append(data)
     # data['featured_answer'] = people_also_ask.get_simple_answer('2+2')
+    replit.clear()
     return output
 
 
@@ -146,6 +147,7 @@ def brave_search(response2):
         except:
             pass
         output2.append(data2)
+        replit.clear()
     return output2
 
 # ------------------------------------------------------------------------------------
@@ -170,7 +172,6 @@ def search(request):
             brave__results = search_1(query)
         except:
             pass
-        replit.clear()
     replit.clear()
 
     return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
