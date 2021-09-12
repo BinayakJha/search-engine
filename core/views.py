@@ -170,7 +170,7 @@ def search(request):
             brave__results = search_1(query)
         except:
             pass
-    replit.clear()
+        replit.clear()
     replit.clear()
 
     return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
