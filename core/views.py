@@ -48,6 +48,7 @@ def get_results(query):
     response = get_source("https://www.google.co.uk/search?q=" + query)
     # replace whitespace with +
     query = query.replace(" ", "+")
+    replit.clear()
     return response
 
 
@@ -57,6 +58,7 @@ def brave_results(query):
     response2 = get_source("https://search.brave.com/search?q=" + query)
     # replace whitespace with +
     query = query.replace(" ", "+")
+    replit.clear()
     return response2
 # ------------------------------------------------------------------------------------
 # parsing results 
@@ -104,6 +106,7 @@ def parse_results(response):
 # ------------------------------------------------------------------------------------
 def google_search(query):
     response = get_results(query)
+    replit.clear()
     return parse_results(response)
 # ------------------------------------------------------------------------------------
 
@@ -155,6 +158,7 @@ def brave_search(response2):
 # ------------------------------------------------------------------------------------
 def search_1(query):
     response2 = brave_results(query)
+    replit.clear()
     return brave_search(response2)
 # ------------------------------------------------------------------------------------
 # main search function
