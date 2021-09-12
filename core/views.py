@@ -37,7 +37,6 @@ def scrape_google(query):
     for url in links[:]:
         if url.startswith(google_domains):
             links.remove(url)
-
     return links
 # ------------------------------------------------------------------------------------
 # getting results from the search
@@ -48,7 +47,6 @@ def get_results(query):
     response = get_source("https://www.google.co.uk/search?q=" + query)
     # replace whitespace with +
     query = query.replace(" ", "+")
-    replit.clear()
     return response
 
 
@@ -58,7 +56,6 @@ def brave_results(query):
     response2 = get_source("https://search.brave.com/search?q=" + query)
     # replace whitespace with +
     query = query.replace(" ", "+")
-    replit.clear()
     return response2
 # ------------------------------------------------------------------------------------
 # parsing results 
@@ -97,7 +94,6 @@ def parse_results(response):
             data['yt_url'] = f"https://i.ytimg.com/vi/{link3}/0.jpg"
         output.append(data)
     # data['featured_answer'] = people_also_ask.get_simple_answer('2+2')
-    replit.clear()
     return output
 
 
@@ -106,7 +102,6 @@ def parse_results(response):
 # ------------------------------------------------------------------------------------
 def google_search(query):
     response = get_results(query)
-    replit.clear()
     return parse_results(response)
 # ------------------------------------------------------------------------------------
 
@@ -150,7 +145,6 @@ def brave_search(response2):
         except:
             pass
         output2.append(data2)
-        replit.clear()
     return output2
 
 # ------------------------------------------------------------------------------------
@@ -158,7 +152,6 @@ def brave_search(response2):
 # ------------------------------------------------------------------------------------
 def search_1(query):
     response2 = brave_results(query)
-    replit.clear()
     return brave_search(response2)
 # ------------------------------------------------------------------------------------
 # main search function
@@ -177,6 +170,9 @@ def search(request):
         except:
             pass
     replit.clear()
-
     return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
+    
 # ------------------------------------------------------------------------------------
+# remove return print from console
+# ------------------------------------------------------------------------------------
+
