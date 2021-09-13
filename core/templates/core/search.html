@@ -30,16 +30,20 @@
             padding: 0.5em 0px 0.25em;
             line-height: 1;
         }
+
         #side-right {
             width: 370px;
         }
+
         .section {
             margin-top: 74px;
             margin-bottom: 15px;
         }
+
         .section:last-child {
             margin-left: 2vw;
         }
+
         .infobox {
             border: none;
             border: solid 0px #E2E8ED;
@@ -50,16 +54,19 @@
             padding: 0px;
             transition: 0.1s ease-in-out;
         }
+
         .infobox-header {
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
             padding: 0.8rem;
         }
+
         .infobox-header-text {
             padding-right: 1.2rem;
             padding-top: 1.2rem;
         }
+
         .infobox-title {
             font-size: 17px;
             font-family: 'Poppins', arial, sans-serif;
@@ -68,13 +75,15 @@
             word-break: break-all;
             padding: 21px;
         }
+
         .infobox-description {
             color: var(--page-color);
             margin-top: 0.6rem;
             font-size: 0.66rem;
             padding: 0px 20px;
         }
-        .infobox-thumbnail .thumb  img {
+
+        .infobox-thumbnail .thumb img {
             height: 100px;
             width: 100px;
             object-fit: contain;
@@ -85,17 +94,20 @@
             align-items: center;
             border-radius: 8px;
         }
+
         .infobox .body {
             font-size: 0.86rem;
             color: var(--page-color);
             padding: 0.8rem;
         }
+
         #infobox .infobox-attr {
             font-size: 0.76rem;
             margin-bottom: 5px;
             color: #27292f;
             display: flex;
         }
+
         .infobox-attr-name {
             min-width: 150px;
             max-width: 150px;
@@ -105,8 +117,8 @@
         .mb-6 {
             margin-bottom: 6px;
         }
-       
- 
+
+
         .fa-search {
             font-size: 20px;
             color: red;
@@ -119,263 +131,328 @@
         .buttons {
             margin-top: 30px;
         }
+
         @media (max-width: 990px) {
             #side-right {
                 width: 89%;
             }
         }
-        @media screen and (min-width:0px) and (max-width: 430px){
+
+        @media screen and (min-width:0px) and (max-width: 430px) {
             #side-right {
                 width: 98%;
             }
         }
-        @media screen and (min-width: 1200px){
-        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-            max-width: 1212px !important;
-            margin-left: 179px;
+
+        @media screen and (min-width: 1200px) {
+
+            .container,
+            .container-lg,
+            .container-md,
+            .container-sm,
+            .container-xl,
+            .container-xxl {
+                max-width: 1212px !important;
+                margin-left: 179px;
+            }
         }
-    }
 
         /* responsive */
     </style>
 
     <style>
         .searchform-container {
-          margin-left: 0;
-          width: 100%;
-          padding-left: 1rem;
-          padding-right: 1rem;
-      }
+            margin-left: 0;
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
         #searchform {
-          position: relative;
-          display: flex;
-          margin-bottom: 10px;
-          max-width: inherit;
-          align-items: center;
-          z-index: 3;
-          height: 56px !important;
-          width: 90%;
-          border: var(--border-color);
-          border-radius: 8px;
-          box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
-          background-color: var(--input-color);
-          transition: all 0.1s ease-in-out;
-      }
-      #search-icon.no-display {
-          display: flex !important;
-          transition: all 0.1s ease-in-out;
-          border-radius: 8px;
-      }
-      #search-icon {
-          opacity: 0.5 !important;
-          background: var(--input-color);
-          transition: all 0.1s ease-in-out;
-      }
-      #search-icon, #back-arrow {
-          display: flex;
-          height: 100%;
-          justify-content: center;
-          align-items: center;
-          min-width: 46px !important;
-          order: 1;
-          z-index: 3;
-          color: var(--input-color);
-          transition: all 0.1s ease-in-out;
-      }
-      #query {
-          flex-grow: 1;
-          width: auto;
-          height: 100%;
-          order: 2;
-          border: none;
-          outline: none;
-          box-shadow: none;
-          color: var(--page-color);
-          background-color: var(--input-color);
-          border-radius: 8px;
-          border-top-left-radius: 10px;
-          border-bottom-left-radius: 10px;
-          padding: 8px 18px;
-          padding-left: 0px !important;
-          transition: all 0.1s ease-in-out;
-      }
-      .form-input {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          background:  var(--search-form);
-          background-image: none;
-          border: .05rem solid #bcc3ce;
-          border-radius: .1rem;
-          color: var(--page-color);
-          display: block;
-          font-size: .8rem;
-          height: 1.8rem;
-          line-height: 1.2rem;
-          max-width: 100%;
-          outline: 0;
-          padding: .25rem .4rem;
-          position: relative;
-          transition: .2s,border .2s,box-shadow .2s,color .2s;
-          width: 100%;
-          transition: all 0.1s ease-in-out;
-      }
-      @media screen and (min-width: 1000px) {
-          .searchform-container {
-              padding-left: 4rem;
-              padding-right: 5rem;
-          }
-          #searchform {
-              width: 62%;
-              box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
-          }
-      }
-          
-      </style>
+            position: relative;
+            display: flex;
+            margin-bottom: 10px;
+            max-width: inherit;
+            align-items: center;
+            z-index: 3;
+            height: 56px !important;
+            width: 90%;
+            border: var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+            background-color: var(--input-color);
+            transition: all 0.1s ease-in-out;
+        }
+
+        #search-icon.no-display {
+            display: flex !important;
+            transition: all 0.1s ease-in-out;
+            border-radius: 8px;
+        }
+
+        #search-icon {
+            opacity: 0.5 !important;
+            background: var(--input-color);
+            transition: all 0.1s ease-in-out;
+        }
+
+        #search-icon,
+        #back-arrow {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            min-width: 46px !important;
+            order: 1;
+            z-index: 3;
+            color: var(--input-color);
+            transition: all 0.1s ease-in-out;
+        }
+
+        #query {
+            flex-grow: 1;
+            width: auto;
+            height: 100%;
+            order: 2;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            color: var(--page-color);
+            background-color: var(--input-color);
+            border-radius: 8px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            padding: 8px 18px;
+            padding-left: 0px !important;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .form-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: var(--search-form);
+            background-image: none;
+            border: .05rem solid #bcc3ce;
+            border-radius: .1rem;
+            color: var(--page-color);
+            display: block;
+            font-size: .8rem;
+            height: 1.8rem;
+            line-height: 1.2rem;
+            max-width: 100%;
+            outline: 0;
+            padding: .25rem .4rem;
+            position: relative;
+            transition: .2s, border .2s, box-shadow .2s, color .2s;
+            width: 100%;
+            transition: all 0.1s ease-in-out;
+        }
+
+        @media screen and (min-width: 1000px) {
+            .searchform-container {
+                padding-left: 4rem;
+                padding-right: 5rem;
+            }
+
+            #searchform {
+                width: 62%;
+                box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+            }
+        }
+    </style>
     <div id="main">
         <h1>LOGO</h1>
         <div class="searchform-container">
             <form class="form" action="/search" method="GET" id="searchform">
-                  <span id="search-icon" class="no-display">
-                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z" fill="url(#paint0_linear)"></path>
-                          <defs>
-                            <linearGradient id="paint0_linear" x1="16.6209" y1="16.6208" x2="-1.90605" y2="3.18655" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#BF14A2"></stop>
-                            <stop offset="1" stop-color="#F73A1C"></stop>
+                <span id="search-icon" class="no-display">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z"
+                            fill="url(#paint0_linear)"></path>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="16.6209" y1="16.6208" x2="-1.90605" y2="3.18655"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#BF14A2"></stop>
+                                <stop offset="1" stop-color="#F73A1C"></stop>
                             </linearGradient>
-                          </defs>
-                  </svg>
-              </span>
-              <input name="query" id='query' type="text" class="form-input" placeholder="Search the world without being tracked…" name="q" value="{{ request.GET.query}}" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Search" title="Search" aria-autocomplete="both" aria-haspopup="false" maxlength="2048" autofocus="">
-              <input name="source" value="web" type="hidden">
-             <div id="autocomplete" class=" svelte-ir7f0d"></div></form>
-          </div>
+                        </defs>
+                    </svg>
+                </span>
+                <input name="query" id='query' type="text" class="form-input"
+                    placeholder="Search the world without being tracked…" name="q" value="{{ request.GET.query}}"
+                    autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Search"
+                    title="Search" aria-autocomplete="both" aria-haspopup="false" maxlength="2048" autofocus="">
+                <input name="source" value="web" type="hidden">
+                <div id="autocomplete" class=" svelte-ir7f0d"></div>
+            </form>
+        </div>
         <br>
     </div>
 
-    
+
     {% if data %}
-<div class="container">
+    <div class="container">
         <div class="row">
             <!-- {% for item in data %}
             <p>{{ item.featured_answer }}</p>
             {% endfor %} -->
             <div id="result" class="section col-xs-12 col-sm-11 col-lg-7">
-            {% for item in data %}
-            <style>
-                .snippet {
-                    padding-top: 1.2rem;
-                    padding-right: 22px;
-                    padding-bottom: 1.7rem;
-                    padding-left: 22px;
-                    background-color: var(--snippet-color);
-                    max-width: 703px;
-                    border-radius: 8px;
-                    padding-bottom: 2rem;
-                    margin-bottom: 0.8rem;
-                    transition: 0.3s;
-                }
+                {% for item in data %}
+                <style>
+                    .snippet {
+                        padding-top: 1.2rem;
+                        padding-right: 22px;
+                        padding-bottom: 1.7rem;
+                        padding-left: 22px;
+                        background-color: var(--snippet-color);
+                        max-width: 703px;
+                        border-radius: 8px;
+                        padding-bottom: 2rem;
+                        margin-bottom: 0.8rem;
+                        transition: 0.3s;
+                    }
 
-                a {
-                    outline: none !important;
-                    color: var(--link-color);
-                    text-decoration: none;
-                }
-                a:visited {
-                    color: #8ab4f8;
-                }
+                    a {
+                        outline: none !important;
+                        color: var(--link-color);
+                        text-decoration: none;
+                    }
 
-                .snippet-title {
-                    font-family: 'Poppins', arial, sans-serif;
-                    text-rendering: optimizeLegibility;
-                    font-size: 1.26rem;
-                    line-height: 30px;
-                    letter-spacing: -0.02em;
-                    color: var(--link-color);
-                    position: relative;
-                    text-decoration: none;
-                    word-wrap: break-word;
-                    font-weight: 400;
-                    display: block;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 1;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+                    a:visited {
+                        color: #8ab4f8;
+                    }
 
-                .favicon {
-                    height: 24px;
-                    width: 25px;
-                    object-fit: cover;
-                    margin-right: 7px;
-                    border-radius: 4px;
-                    color: #1b1b1b;
-                    font-size: 15px;
-                    text-align: center;
-                    overflow: hidden;
-                    position: relative;
-                    padding: 0px;
-                    vertical-align: middle;
-                    background-color: transparent;
-                    display: inline-block;
-                }
+                    .snippet-title {
+                        font-family: 'Poppins', arial, sans-serif;
+                        text-rendering: optimizeLegibility;
+                        font-size: 1.26rem;
+                        line-height: 30px;
+                        letter-spacing: -0.02em;
+                        color: var(--link-color);
+                        position: relative;
+                        text-decoration: none;
+                        word-wrap: break-word;
+                        font-weight: 400;
+                        display: block;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
 
-                .snippet-url {
-                    display: flex;
-                    align-items: center;
-                    max-width: 90%;
-                    font-size: 0.96rem;
-                    color: #545c80;
-                    text-rendering: optimizeLegibility;
-                    font-style: normal;
-                    padding: 1.2rem 0 1.3rem;
-                    overflow: hidden;
-                }
+                    .favicon {
+                        height: 24px;
+                        width: 25px;
+                        object-fit: cover;
+                        margin-right: 7px;
+                        border-radius: 4px;
+                        color: #1b1b1b;
+                        font-size: 15px;
+                        text-align: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px;
+                        vertical-align: middle;
+                        background-color: transparent;
+                        display: inline-block;
+                    }
 
-                .netloc {
-                    color: #6d78a0;
-                    font-weight: 500;
-                    white-space: nowrap;
-                    text-decoration: none;
-                }
+                    .snippet-url {
+                        display: flex;
+                        align-items: center;
+                        max-width: 90%;
+                        font-size: 0.96rem;
+                        color: #545c80;
+                        text-rendering: optimizeLegibility;
+                        font-style: normal;
+                        padding: 1.2rem 0 1.3rem;
+                        overflow: hidden;
+                    }
 
-                .url-path {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    text-decoration: none;
-                }
+                    .netloc {
+                        color: #6d78a0;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        text-decoration: none;
+                    }
 
-                .snippet-description {
-                    font-size: 1rem;
-                    font-weight: 400;
-                    color: var(--page-color);
-                    margin-bottom: 0;
-                    word-wrap: break-word;
-                    letter-spacing: -0.008em;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 6;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    display: flex;
-                }
-                @media screen and (min-width: 1400px){ 
-                .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-                    max-width: 1212px !important;
-                }
-                       
-            }
-            </style>
+                    .url-path {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-decoration: none;
+                    }
+
+                    .snippet-description {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: var(--page-color);
+                        margin-bottom: 0;
+                        word-wrap: break-word;
+                        letter-spacing: -0.008em;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 6;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        display: flex;
+                    }
+                    .autocomplete-items {
+        position: absolute;
+        border: var(--border-color);
+        /* border-top: none; */
+        z-index: 99;
+        top: 116%;
+        left: -3px;
+        right: 0;
+        box-shadow: 0px 8px 8px rgb(37 44 54 / 25%);
+        text-align: left;
+        border-radius: 8px;
+        width: 101%;
+    }
+
+        .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: var(--input-color); 
+        border-bottom: 1px solid transparent; 
+        border-radius: 8px;
+        }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+        background-color: var(--snippet-color); 
+        color:var(--page-color);
+        }
+
+        /*when navigating through the items using the arrow keys:*/
+        .autocomplete-active {
+        background-color:#676768 !important; 
+        color: var(--page-color); 
+        }
+                    @media screen and (min-width: 1400px) {
+
+                        .container,
+                        .container-lg,
+                        .container-md,
+                        .container-sm,
+                        .container-xl,
+                        .container-xxl {
+                            max-width: 1212px !important;
+                        }
+
+                    }
+                </style>
                 <div class="snippet fdb " data-loc="main" data-pos="0" data-type="web" data-ref-pos="0" id="snippets">
                     <a href="{{ item.link }}" class="result-header" target="_self">
-                        <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}" loading="lazy"
-                                width="16" height="16">{{ item.title }}
+                        <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}"
+                                loading="lazy" width="16" height="16">{{ item.title }}
                         </span>
                     </a>
                     <cite class="snippet-url">
-                        <span class="netloc"><a href='{{ item.link }}' style="color: #6d78a0;">{{ item.cite }}</a></span>
+                        <span class="netloc"><a href='{{ item.link }}' style="color: #6d78a0;">{{ item.cite
+                                }}</a></span>
                     </cite>
                     <p class="snippet-description">
                         {{ item.text }}
@@ -384,72 +461,1036 @@
                         <img src="{{ item.yt_url }}" width="25%" height="100%" style="border-radius: 8px;">
                         {% endif %}
                     </p>
+                </div>
+                {% endfor %}
 
             </div>
-            {% endfor %}
-            
+            <!-- side bar -->
+            {% if data2 %}
+            {% for item2 in data2 %}
+            <div id="side-right" class="section col-md-5 col-sm-12">
+                <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox"
+                    data-subtype="generic" data-ref-pos="0">
+                    <div class="infobox-header">
+                        <div class="infobox-header-text">
+                            <a class="infobox-title" href="{{ item2.links }}" target="_self">
+                                {{ item2.title1 }}
+                            </a>
+                            <div class="infobox-description">
+                                {{ item2.description }}
+                            </div>
+                        </div>
+                        <div class="infobox-thumbnail">
+                            <a href="{{ item2.image_url }}" target="_self">
+                                <div class="thumb">
+                                    <img src="{{ item2.image_url }}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="body">
+
+                        <div class="mb-6">
+                            {{ item2.big_description }}
+                        </div>
+
+                    </div>
+
+                    <!-- rating -->
+
+                    <center>
+                        <h2 style="color:var(--page-color)">{{ item2.rating }}</h2>
+                    </center>
+                    <br>
+                    <div class="rating" style="display:flex;padding:0px 20px;">
+                        {% if item2.rating_image%}
+                        <img src="{{ item2.rating_image }}" alt="" class="favicon" width='40' height='40'>
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                        <!-- rating -->
+                        <p style='padding:0px 20px; color:var(--page-color);'>{{ item2.rating_text }}</p>
+                    </div>
+                    <div class="body">
+                        <div class="attribution text-xs">
+                            Data from
+                            <a href="{{ item2.links }}" id="source">Wikipedia</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <!-- side bar -->
-        {% if data2 %}
-        {% for item2 in data2 %}
-        <div id="side-right" class="section col-md-5 col-sm-12">
-            <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox" data-subtype="generic" data-ref-pos="0">
-    <div class="infobox-header">
-    <div class="infobox-header-text">
-    <a class="infobox-title" href="{{ item2.links }}" target="_self">
-    {{ item2.title1 }}
-        </a>
-    <div class="infobox-description">
-        {{ item2.description }}
-    </div>
-        </div>
-    <div class="infobox-thumbnail">
-    <a href="{{ item2.image_url }}" target="_self">
-    <div class="thumb" >
-        <img src="{{ item2.image_url }}" alt="">
-    </div>
-    </a>
-    </div>
-    </div>
-
-
-    <div class="body">
-
-    <div class="mb-6">
-    {{ item2.big_description }}
-    </div>
-
-    </div>
-
-    <!-- rating -->
-
-    <center><h2 style="color:var(--page-color)">{{ item2.rating }}</h2></center>
-    <br>
-    <div class="rating" style="display:flex;padding:0px 20px;">
-        {% if item2.rating_image%}
-        <img src="{{ item2.rating_image }}" alt="" class="favicon" width='40' height='40'>
-        {% else %}
-        <p></p>
+        {% endfor %}
         {% endif %}
-         <!-- rating -->
-        <p style='padding:0px 20px; color:var(--page-color);'>{{ item2.rating_text }}</p>
-    </div>
-    <div class="body">
-    <div class="attribution text-xs">
-    Data from
-    <a href="{{ item2.links }}" id="source">Wikipedia</a>
-    </div>
-    </div>
+        {% endif %}
 
-        </div>
-        </div>
-</div>
-    {% endfor %}
-    {% endif %}
-{% endif %}
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+            </script>
+            <script>
+                function autocomplete(inp, arr) {
+                  /*the autocomplete function takes two arguments,
+                  the text field element and an array of possible autocompleted values:*/
+                  var currentFocus;
+                  /*execute a function when someone writes in the text field:*/
+                  inp.addEventListener("input", function(e) {
+                      var a, b, i, val = this.value;
+                      /*close any already open lists of autocompleted values*/
+                      closeAllLists();
+                      if (!val) { return false;}
+                      currentFocus = -1;
+                      /*create a DIV element that will contain the items (values):*/
+                      a = document.createElement("DIV");
+                      a.setAttribute("id", this.id + "autocomplete-list");
+                      a.setAttribute("class", "autocomplete-items");
+                      /*append the DIV element as a child of the autocomplete container:*/
+                      this.parentNode.appendChild(a);
+                      /*for each item in the array...*/
+                      for (i = 0; i < arr.length; i++) {
+                        /*check the whole text and then give suto complete suggestion
+                        only if the text is a substring of the item:*/
+                        
+                        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                          /*create a DIV element for each matching element:*/
+                          b = document.createElement("DIV");
+                          /*make the matching letters bold:*/
+                          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                          b.innerHTML += arr[i].substr(val.length);
+                          /*insert a input field that will hold the current array item's value:*/
+                          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                          /*execute a function when someone clicks on the item value (DIV element):*/
+                          b.addEventListener("click", function(e) {
+                              /*insert the value for the autocomplete text field:*/
+                              inp.value = this.getElementsByTagName("input")[0].value;
+                              /*close the list of autocompleted values,
+                              (or any other open lists of autocompleted values:*/
+                              closeAllLists();
+                          });
+                          a.appendChild(b);
+                        }
+                      }
+                  });
+                  /*execute a function presses a key on the keyboard:*/
+                  inp.addEventListener("keydown", function(e) {
+                      var x = document.getElementById(this.id + "autocomplete-list");
+                      if (x) x = x.getElementsByTagName("div");
+                      if (e.keyCode == 40) {
+                        /*If the arrow DOWN key is pressed,
+                        increase the currentFocus variable:*/
+                        currentFocus++;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                      } else if (e.keyCode == 38) { //up
+                        /*If the arrow UP key is pressed,
+                        decrease the currentFocus variable:*/
+                        currentFocus--;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                      } else if (e.keyCode == 13) {
+                       
+                        if (currentFocus > -1) {
+                          /*and simulate a click on the "active" item:*/
+                          if (x) x[currentFocus].click();
+                        }
+                      }
+                  });
+                  function addActive(x) {
+                    /*a function to classify an item as "active":*/
+                    if (!x) return false;
+                    /*start by removing the "active" class on all items:*/
+                    removeActive(x);
+                    if (currentFocus >= x.length) currentFocus = 0;
+                    if (currentFocus < 0) currentFocus = (x.length - 1);
+                    /*add class "autocomplete-active":*/
+                    x[currentFocus].classList.add("autocomplete-active");
+                  }
+                  function removeActive(x) {
+                    /*a function to remove the "active" class from all autocomplete items:*/
+                    for (var i = 0; i < x.length; i++) {
+                      x[i].classList.remove("autocomplete-active");
+                    }
+                  }
+                  function closeAllLists(elmnt) {
+                    /*close all autocomplete lists in the document,
+                    except the one passed as an argument:*/
+                    var x = document.getElementsByClassName("autocomplete-items");
+                    for (var i = 0; i < x.length; i++) {
+                      if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                      }
+                    }
+                  }
+                  /*execute a function when someone clicks in the document:*/
+                  document.addEventListener("enter", function(e) {
+                    closeAllLists(e.target);
+                  });
+                  document.addEventListener("click", function (e) {
+                      closeAllLists(e.target);
+                  });
+                }
+                
+                /*An array containing all the country names in the world:*/
+                var countries = ["Youtube","Facebook","Messenger","Gmail","Classroom","Google","Mishri Song","Hindi Songs","Discord","Samlan khan","Stackoverflow","Akhay kumar","hello song by adele","Github","Replit","Robert De Niro","Jack Nicholson","Marlon Brando","Denzel Washington","Katharine Hepburn","Humphrey Bogart","Meryl Streep","Daniel Day-Lewis","Sidney Poitier","Clark Gable","Ingrid Bergman","Tom Hanks","Elizabeth Taylor","Bette Davis","Gregory Peck","Leonardo DiCaprio","Cate Blanchett","Audrey Hepburn","Spencer Tracy","Kate Winslet","Shah Rukh Khan","Viola Davis","Sophia Loren","Cary Grant","Vivien Leigh","Marilyn Monroe","Laurence Olivier","James Stewart","Steve McQueen","Diane Keaton","Julia Roberts","Jodie Foster","Judy Garland","Morgan Freeman","Paul Newman","Henry Fonda","Catherine Deneuve","Grace Kelly",
+                "Helen Mirren",
+                "James Cagney",
+                "Angela Bassett",
+                "Johnny Depp",
+                "Greta Garbo",
+                "Olivia de Havilland",
+                "Charles Chaplin",
+                "Setsuko Hara",
+                "Julie Andrews",
+                "Montgomery Clift",
+                "Isabelle Huppert",
+                "Al Pacino",
+                "Rita Hayworth",
+                "Halle Berry",
+                "James Dean",
+                "Kirk Douglas",
+                "Natalie Wood",
+                "Marcello Mastroianni",
+                "Joan Crawford",
+                "Harrison Ford",
+                "Susan Sarandon",
+                "Gene Kelly",
+                "Glenn Close",
+                "Joan Fontaine",
+                "Julianne Moore",
+                "Will Smith",
+                "Bruce Lee",
+                "Regina King",
+                "Angelina Jolie",
+                "John Wayne",
+                "Jane Fonda",
+                "Charlton Heston",
+                "Gary Cooper",
+                "Anthony Hopkins",
+                "Liv Ullmann",
+                "Natalie Portman",
+                "Gérard Depardieu",
+                "Forest Whitaker",
+                "Sandra Bullock",
+                "Deborah Kerr",
+                "Toshirô Mifune",
+                "Dustin Hoffman",
+                "Mohanlal",
+                "Emma Thompson",
+                "Tom Cruise",
+                "Michelle Pfeiffer",
+                "Faye Dunaway",
+                "Samuel L. Jackson",
+                "Peter O'Toole",
+                "Heath Ledger",
+                "Penélope Cruz",
+                "Nicole Kidman",
+                "Chadwick Boseman",
+                "Antonio Banderas",
+                "Sigourney Weaver",
+                "Salma Hayek",
+                "Don Cheadle",
+                "Frances McDormand",
+                "Kathy Bates",
+                "Omar Sharif",
+                "Amy Adams",
+                "Joaquin Phoenix",
+                "Aamir Khan",
+                "Akshay Kumar",
+                "Ajay Devgn",
+                "Amjad Khan",
+                "Amitabh Bachchan",
+                "Amol Palekar",
+                "Abhay Deol",
+                "Akshaye Khanna",
+                "Arshad Warsi",
+                "Anushka Shetty",
+                "Atul Kulkarni",
+                "Asrani",
+                "Ayushmann Khurrana",
+                "Aruna Irani",
+                "Annu Kapoor",
+                "Ashish Vidyarthi",
+                "Adil Hussain",
+                "Anupam Kher",
+                "Anil Kapoor",
+                "Amrish Puri",
+                "Amole Gupte",
+                "Boman Irani",
+                "Balraj Sahni",
+                "Binnu Dhillon",
+                "Bharat Bhushan",
+                "Chiranjeevi",
+                "Chunky Panday",
+                "Danny Denzongpa",
+                "Darsheel Safary",
+                "Deepak Tijori",
+                "Dharmendra",
+                "Deepika Padukone",
+                "Dimple Kapadia",
+                "Dev Anand",
+                "Deepti Naval",
+                "Dilip Kumar",
+                "Farooq Shaikh",
+                "Farhan Akhtar",
+                "Feroz Khan",
+                "Farida Jalal",
+                "Guru Dutt",
+                "Govinda",
+                "Gulshan Grover",
+                "Gurpreet Ghuggi",
+                "Girish Karnad",
+                "Hrithik Roshan",
+                "Huma Qureshi",
+                "Inaamulhaq",
+                "Irrfan Khan",
+                "Jackie Shroff",
+                "Jimmy Sheirgill",
+                "Jeetendra",
+                "Jaspal Bhatti",
+                "Johnny Lever",
+                "Jaswinder Bhalla",
+                "Kamal Haasan",
+                "Kangana Ranaut",
+                "Konkona Sen Sharma",
+                "Kader Khan",
+                "Kay Kay Menon",
+                "Kajol",
+                "Kulbhushan Kharbanda",
+                "Kalki Koechlin",
+                "Kapil Sharma",
+                "Krishna Abhishek",
+                "Karuna Bannerjee",
+                "Kanwaljit Singh",
+                "Lara Dutta",
+                "Manjot Singh",
+                "Manu Rishi Chadha",
+                "Mehmood",
+                "Mukesh Tiwari",
+                "Mammootty",
+                "Makrand Deshpande",
+                "Madhavan",
+                "Mohanlal",
+                "Mita Vashisht",
+                "Manoj Bajpayee",
+                "Manoj Joshi",
+                "Madhuri Dixit",
+                "Mohnish Bahl",
+                "Mithun Chakraborty",
+                "Mukesh Khanna",
+                "Mukul Dev",
+                "Madhubala",
+                "Meena Kumari",
+                "Mala Sinha",
+                "Manoj Pahwa",
+                "Manoj Kumar",
+                "Nassar",
+                "Naseeruddin Shah",
+                "Nandita Das",
+                "Nagarjuna Akkineni",
+                "Nana Patekar",
+                "Nawazuddin Siddiqui",
+                "Nargis",
+                "Nirupa Roy",
+                "Nutan",
+                "Neeraj Kabi",
+                "Navin Nischol",
+                "Salman Khan",
+                "A.NET (A#/A sharp)",
+                "A-0 System",
+                "A+ (A plus)",
+                "ABAP",
+                "ABC",
+                "ABC ALGOL",
+                "ACC",
+                "Accent (Rational Synergy)",
+                "Ace DASL (Distributed Application Specification Language)",
+                "Action!",
+                "ActionScript",
+                "Actor",
+                "Ada",
+                "Adenine (Haystack)",
+                "AdvPL",
+                "Agda",
+                "Agilent VEE (Keysight VEE)",
+                "Agora",
+                "AIMMS",
+                "Aldor",
+                "Alef",
+                "ALF",
+                "ALGOL 58",
+                "ALGOL 60",
+                "ALGOL 68",
+                "ALGOL W",
+                "Alice (Alice ML)",
+                "Alma-0",
+                "AmbientTalk",
+                "Amiga E",
+                "AMOS (AMOS BASIC)",
+                "AMPL",
+                "Analitik",
+                "AngelScript",
+                "Apache Pig latin",
+                "Apex (Salesforce.com, Inc)",
+                "APL",
+                "App Inventor for Android's visual block language (MIT App Inventor)",
+                "AppleScript",
+                "APT",
+                "Arc",
+                "ARexx",
+                "Argus",
+                "Assembly language (ASM)",
+                "AutoIt",
+                "AutoLISP / Visual LISP",
+                "Averest",
+                "AWK",
+                "Axum",
+                "B",
+                "Babbage",
+                "Ballerina",
+                "Bash",
+                "BASIC",
+                "Batch file (Windows/MS-DOS)",
+                "bc (basic calculator)",
+                "BCPL",
+                "BeanShell",
+                "Bertrand",
+                "BETA",
+                "BLISS",
+                "Blockly",
+                "BlooP",
+                "Boo",
+                "Boomerang",
+                "Bosque",
+                "C – ISO/IEC 9899",
+                "C-- (C minus minus)",
+                "C++ (C plus plus) – ISO/IEC 14882",
+                "C*",
+                "C# (C sharp) – ISO/IEC 23270",
+                "C/AL",
+                "Caché ObjectScript",
+                "C Shell (csh)",
+                "Caml",
+                "Cayenne (Lennart Augustsson)",
+                "CDuce",
+                "Cecil",
+                "CESIL (Computer Education in Schools Instruction Language)",
+                "Céu",
+                "Ceylon",
+                "CFEngine",
+                "Cg (High-Level Shader/Shading Language [HLSL])",
+                "Ch",
+                "Chapel (Cascade High Productivity Language)",
+                "Charm",
+                "CHILL",
+                "CHIP-8",
+                "ChucK",
+                "Cilk (also Cilk++ and Cilk plus)",
+                "Control Language",
+                "Claire",
+                "Clarion",
+                "Clean",
+                "Clipper",
+                "CLIPS",
+                "CLIST",
+                "Clojure",
+                "CLU",
+                "CMS-2",
+                "COBOL – ISO/IEC 1989",
+                "CobolScript – COBOL Scripting language",
+                "Cobra",
+                "CoffeeScript",
+                "ColdFusion",
+                "COMAL",
+                "COMIT",
+                "Common Intermediate Language (CIL)",
+                "Common Lisp (also known as CL)",
+                "COMPASS",
+                "Component Pascal",
+                "Constraint Handling Rules (CHR)",
+                "COMTRAN",
+                "Cool",
+                "Coq",
+                "Coral 66",
+                "CorVision",
+                "COWSEL",
+                "CPL",
+                "Cryptol",
+                "Crystal",
+                "Csound",
+                "Cuneiform",
+                "Curl",
+                "Curry",
+                "Cybil",
+                "Cyclone",
+                "Cypher Query Language",
+                "Cython",
+                "CEEMAC",
+                "D",
+                "Dart",
+                "Darwin",
+                "DataFlex",
+                "Datalog",
+                "DATATRIEVE",
+                "dBase",
+                "dc",
+                "DCL (DIGITAL Command Language)",
+                "Delphi",
+                "DinkC",
+                "DIBOL",
+                "Dog",
+                "Draco",
+                "DRAKON",
+                "Dylan",
+                "DYNAMO",
+                "DAX (Data Analysis Expressions)",
+                "E",
+                "Ease",
+                "Easy PL/I",
+                "EASYTRIEVE PLUS",
+                "eC",
+                "ECMAScript",
+                "Edinburgh IMP",
+                "EGL",
+                "Eiffel",
+                "ELAN",
+                "Elixir",
+                "Elm",
+                "Emacs Lisp",
+                "Emerald",
+                "Epigram",
+                "EPL (Easy Programming Language)",
+                "EPL (Eltron Programming Language)",
+                "Erlang",
+                "es",
+                "Escher",
+                "ESPOL",
+                "Esterel",
+                "Etoys",
+                "Euclid",
+                "Euler",
+                "Euphoria",
+                "EusLisp Robot Programming Language",
+                "CMS EXEC (EXEC)",
+                "EXEC 2",
+                "Executable UML",
+                "Ezhil",
+                "F",
+                "F# (F sharp)",
+                "F*",
+                "Factor",
+                "Fantom",
+                "FAUST",
+                "FFP",
+                "fish",
+                "Fjölnir",
+                "FL",
+                "Flavors",
+                "Flex",
+                "Flix",
+                "FlooP",
+                "FLOW-MATIC (B0)",
+                "FOCAL (Formulating On-Line Calculations in Algebraic Language/FOrmula CALculator)",
+                "FOCUS",
+                "FOIL",
+                "FORMAC (FORMula MAnipulation Compiler)",
+                "@Formula",
+                "Forth",
+                "Fortran – ISO/IEC 1539",
+                "Fortress",
+                "FP",
+                "FoxBase/FoxPro",
+                "Franz Lisp",
+                "Futhark",
+                "F-Script",
+                "Game Maker Language (Scripting language)",
+                "GameMonkey Script",
+                "GAMS (General Algebraic Modeling System)",
+                "GAP",
+                "G-code",
+                "GDScript (Godot)",
+                "Genie",
+                "GDL (Geometric Description Language)",
+                "GEORGE",
+                "GLSL (OpenGL Shading Language)",
+                "GNU E",
+                "GNU Guile (GNU Ubiquitous Intelligent Language for Extensions)",
+                "Go",
+                "Go!",
+                "GOAL (Game Oriented Assembly Lisp)",
+                "Gödel",
+                "Golo",
+                "GOM (Good Old Mad)",
+                "Google Apps Script",
+                "Gosu",
+                "GOTRAN (IBM 1620)",
+                "GPSS (General Purpose Simulation System)",
+                "GraphTalk (Computer Sciences Corporation)",
+                "GRASS",
+                "Grasshopper",
+                "Groovy (Apache Groovy)",
+                "Hack",
+                "HAGGIS",
+                "HAL/S",
+                "Halide (programming language)",
+                "Hamilton C shell",
+                "Harbour",
+                "Hartmann pipelines",
+                "Haskell",
+                "Haxe",
+                "Hermes",
+                "High Level Assembly (HLA)",
+                "HLSL",
+                "Hollywood",
+                "HolyC (TempleOS)",
+                "Hop",
+                "Hopscotch",
+                "Hope",
+                "Hume",
+                "HyperTalk",
+                "Io",
+                "Icon",
+                "IBM Basic assembly language",
+                "IBM HAScript",
+                "IBM Informix-4GL",
+                "IBM RPG",
+                "IDL",
+                "Idris",
+                "Inform",
+                "ISLISP",
+                "J",
+                "J# (J sharp)",
+                "J++ (J plus plus)",
+                "JADE",
+                "Jai",
+                "JAL",
+                "Janus (concurrent constraint programming language)",
+                "Janus (time-reversible computing programming language)",
+                "JASS",
+                "Java",
+                "JavaFX Script",
+                "JavaScript",
+                "Jess (programming language)",
+                "JCL",
+                "JEAN",
+                "Join Java",
+                "JOSS",
+                "Joule",
+                "JOVIAL",
+                "Joy",
+                "JScript",
+                "JScript .NET",
+                "Julia",
+                "Jython",
+                "K",
+                "Kaleidoscope",
+                "Karel",
+                "KEE",
+                "Kixtart",
+                "Klerer-May System",
+                "KIF (Knowledge Interchange Format)",
+                "Kojo",
+                "Kotlin",
+                "KRC",
+                "KRL",
+                "KRL (KUKA Robot Language)",
+                "KRYPTON",
+                "KornShell (ksh)",
+                "Kodu",
+                "Kv (Kivy)",
+                "LabVIEW",
+                "Ladder",
+                "LANSA",
+                "Lasso",
+                "Lava",
+                "LC-3",
+                "Lean",
+                "Legoscript",
+                "Lexico",
+                "LIL",
+                "LilyPond",
+                "Limbo",
+                "Limnor",
+                "LINC",
+                "Lingo",
+                "LINQ",
+                "LIS",
+                "LISA",
+                "Language H",
+                "Lisp – ISO/IEC 13816",
+                "Lite-C",
+                "Lithe",
+                "Little b",
+                "LLL",
+                "Logo",
+                "Logtalk",
+                "LotusScript",
+                "LPC",
+                "LSE",
+                "LSL",
+                "LiveCode",
+                "LiveScript",
+                "Lua",
+                "Lucid",
+                "Lustre",
+                "LYaPAS",
+                "Lynx",
+                "Machine code",
+                "MAD (Michigan Algorithm Decoder)",
+                "MAD/I",
+                "Magik",
+                "Magma",
+                "Máni",
+                "Maple",
+                "MAPPER (now part of BIS)",
+                "MARK-IV (now VISION:BUILDER)",
+                "Mary",
+                "MATLAB",
+                "MASM Microsoft Assembly x86",
+                "MATH-MATIC",
+                "Maude system",
+                "Maxima (see also Macsyma)",
+                "Max (Max Msp – Graphical Programming Environment)",
+                "MaxScript internal language 3D Studio Max",
+                "Maya (MEL)",
+                "MDL",
+                "Mercury",
+                "Mesa",
+                "MHEG-5 (Interactive TV programming language)",
+                "Microcode",
+                "MicroScript",
+                "Microsoft Power Fx",
+                "MIIS",
+                "Milk (programming language)",
+                "MIMIC",
+                "Mirah",
+                "Miranda",
+                "MIVA Script",
+                "ML",
+                "Model 204",
+                "Modelica",
+                "Modula",
+                "Modula-2",
+                "Modula-3",
+                "Mohol",
+                "MOO",
+                "Moonscipt",
+                "Mortran",
+                "Mouse",
+                "MPD",
+                "MSL",
+                "MUMPS",
+                "MuPAD",
+                "Mutan",
+                "Mystic Programming Language (MPL)",
+                "NASM",
+                "Napier88",
+                "Neko",
+                "Nemerle",
+                "NESL",
+                "Net.Data",
+                "NetLogo",
+                "NetRexx",
+                "NewLISP",
+                "NEWP",
+                "Newspeak",
+                "NewtonScript",
+                "Nial",
+                "Nickle (NITIN)",
+                "Nim",
+                "Nix (Systems configuration language)",
+                "NPL",
+                "Not eXactly C (NXC)",
+                "Not Quite C (NQC)",
+                "NSIS",
+                "Nu",
+                "NWScript",
+                "NXT-G",
+                "o:XML",
+                "Oak",
+                "Oberon",
+                "OBJ2",
+                "Object Lisp",
+                "ObjectLOGO",
+                "Object REXX",
+                "Object Pascal",
+                "Objective-C",
+                "Objective-J",
+                "Obliq",
+                "OCaml",
+                "occam",
+                "occam-π",
+                "Octave",
+                "OmniMark",
+                "Opa",
+                "Opal",
+                "OpenCL",
+                "OpenEdge ABL",
+                "OPL",
+                "OpenVera",
+                "OPS5",
+                "OptimJ",
+                "Orc",
+                "ORCA/Modula-2",
+                "Oriel",
+                "Orwell",
+                "Oxygene",
+                "Oz",
+                "P",
+                "P4",
+                "P′'",
+                "ParaSail (programming language)",
+                "PARI/GP",
+                "Pascal – ISO 7185",
+                "Pascal Script",
+                "PCASTL",
+                "PCF",
+                "PEARL",
+                "PeopleCode",
+                "Perl",
+                "PDL",
+                "Pharo",
+                "PHP",
+                "Pico",
+                "Picolisp",
+                "Pict",
+                "Pike",
+                "PILOT",
+                "Pipelines",
+                "Pizza",
+                "PL-11",
+                "PL/0",
+                "PL/B",
+                "PL/C",
+                "PL/I – ISO 6160",
+                "PL/M",
+                "PL/P",
+                "PL/S",
+                "PL/SQL",
+                "PL360",
+                "PLANC",
+                "Plankalkül",
+                "Planner",
+                "PLEX",
+                "PLEXIL",
+                "Plus",
+                "POP-11",
+                "POP-2",
+                "PostScript",
+                "PortablE",
+                "POV-Ray SDL",
+                "Powerhouse",
+                "PowerBuilder – 4GL GUI application generator from Sybase",
+                "PowerShell",
+                "PPL",
+                "Processing",
+                "Processing.js",
+                "Prograph",
+                "PROIV",
+                "Project Verona",
+                "Prolog",
+                "PROMAL",
+                "Promela",
+                "PROSE modeling language",
+                "PROTEL",
+                "ProvideX",
+                "Pro*C",
+                "Pure",
+                "Pure Data",
+                "PureScript",
+                "Python",
+                "Q (programming language from Kx Systems)",
+                "Q# (Microsoft programming language)",
+                "Qalb",
+                "Quantum Computation Language",
+                "QtScript",
+                "QuakeC",
+                "QPL",
+                ".QL",
+                "R",
+                "R++",
+                "Racket",
+                "Raku",
+                "RAPID",
+                "Rapira",
+                "Ratfiv",
+                "Ratfor",
+                "rc",
+                "Reason",
+                "REBOL",
+                "Red",
+                "Redcode",
+                "REFAL",
+                "REXX",
+                "Rlab",
+                "ROOP",
+                "RPG",
+                "RPL",
+                "RSL",
+                "RTL/2",
+                "Ruby",
+                "Rust",
+                "S",
+                "S2",
+                "S3",
+                "S-Lang",
+                "SabreTalk",
+                "SAIL",
+                "SAKO",
+                "SAS",
+                "SASL",
+                "Sather",
+                "Sawzall",
+                "Scala",
+                "Scheme",
+                "Scilab",
+                "Scratch",
+                "Script.NET",
+                "Sed",
+                "Seed7",
+                "Self",
+                "SenseTalk",
+                "SequenceL",
+                "Serpent",
+                "SETL",
+                "Short Code",
+                "SIMPOL",
+                "SIGNAL",
+                "SiMPLE",
+                "SIMSCRIPT",
+                "Simula",
+                "Simulink",
+                "SISAL",
+                "SLIP",
+                "SMALL",
+                "Smalltalk",
+                "SML",
+                "Strongtalk",
+                "Snap!",
+                "SNOBOL (SPITBOL)",
+                "Snowball",
+                "SOL",
+                "Solidity",
+                "SOPHAEROS",
+                "Source",
+                "SPARK",
+                "Speakeasy",
+                "Speedcode",
+                "SPIN",
+                "SP/k",
+                "SPS",
+                "SQL",
+                "SQR",
+                "Squeak",
+                "Squirrel",
+                "SR",
+                "S/SL",
+                "Starlogo",
+                "Strand",
+                "Stata",
+                "Stateflow",
+                "Subtext",
+                "SBL",
+                "SuperCollider",
+                "Superplan",
+                "SuperTalk",
+                "Swift (Apple programming language)",
+                "Swift (parallel scripting language)",
+                "SYMPL",
+                "SystemVerilog",
+                "T",
+                "TACL",
+                "TACPOL",
+                "TADS (Text Adventure Development System)",
+                "TAL",
+                "Tcl",
+                "Tea",
+                "TECO (Text Editor and Corrector)",
+                "TELCOMP",
+                "TeX",
+                "TEX (Text Executive Programming Language)",
+                "TIE",
+                "TMG (TransMo Griffer), compiler-compiler",
+                "Tom",
+                "Toi",
+                "Topspeed (Clarion)",
+                "TPU (Text Processing Utility)",
+                "Trac",
+                "TTM",
+                "T-SQL (Transact-SQL)",
+                "Transcript (LiveCode)",
+                "TTCN (Tree and Tabular Combined Notation)",
+                "Turing",
+                "TUTOR (PLATO Author Language)",
+                "TXL",
+                "TypeScript",
+                "Tynker",
+                "Ubercode",
+                "UCSD Pascal",
+                "Umple",
+                "Unicon",
+                "Uniface",
+                "UNITY",
+                "UnrealScript",
+                "Vala",
+                "Verilog",
+                "VHDL",
+                "Vim script",
+                "Viper (Ethereum/Ether (ETH))",
+                "Visual DataFlex",
+                "Visual DialogScript",
+                "Visual FoxPro",
+                "Visual J++ (Visual J plus plus)",
+                "Visual LISP",
+                "Visual Objects",
+                "Visual Prolog",
+                "WATFIV, WATFOR (WATerloo FORtran IV)",
+                "WebAssembly",
+                "WebDNA",
+                "Whiley",
+                "Winbatch",
+                "Wolfram Language",
+                "Wyvern",
+                "X++ (X plus plus/Microsoft Dynamics AX)",
+                "X10",
+                "xBase++ (xBase plus plus)",
+                "XBL",
+                "XC (targets XMOS architecture)",
+                "xHarbour",
+                "XL",
+                "Xojo",
+                "XOTcl",
+                "Xod",
+                "XPL",
+                "XPL0",
+                "XQuery",
+                "XSB",
+                "XSharp (X#)",
+                "XSLT",
+                "Xtend",
+                "Yorick",
+                "YQL",
+                "Yoix",
+                "Z notation",
+                "Z shell",
+                "Zebra, ZPL, ZPL2",
+                "Zeno",
+                "ZetaLisp",
+                "Zig",
+                "ZOPL",
+                "ZPL",
+                "Z++",
+                "Clubhouse","Rumble","MeWe","Gab","Triller","WT","Social","Valence","Flip","Popbase","Elpha","Yubo","Peanut","HouseParty","Caffeine","Steemit","Goodreads","Twitch","CaringBridge","WattPad","Crunchyroll","Soundcloud","Mocospace","CouchSurfing","italki","Medium","Ello","Vimeo","Giphy","Tribe","Kuaishou","Imgur","Influenster","FilmAffinity","Open","Diary","Bubbly",
+            ];
+                
+                // what user inputs show that also show in autocomplete
+            
+                
+                /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+                autocomplete(document.getElementById("query"), countries);
+                </script>
 </body>
 
 </html>

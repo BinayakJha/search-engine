@@ -6,8 +6,10 @@ import urllib
 import replit
 # Create your views here.
 
+# ------------------------------------------------------------------------------------
 # Get the source from the url function
 # ------------------------------------------------------------------------------------
+
 def get_source(url):
     try:
         session = HTMLSession()
@@ -16,10 +18,11 @@ def get_source(url):
 
     except requests.exceptions.RequestException as e:
         print(e)
-# ------------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------------
 # Scraping Google Search
 # ------------------------------------------------------------------------------------
+
 def scrape_google(query):
 
     query = urllib.parse.quote_plus(query)
@@ -38,9 +41,11 @@ def scrape_google(query):
         if url.startswith(google_domains):
             links.remove(url)
     return links
+
 # ------------------------------------------------------------------------------------
 # getting results from the search
 # ------------------------------------------------------------------------------------
+
 def get_results(query):
 
     query = urllib.parse.quote_plus(query)
@@ -49,7 +54,9 @@ def get_results(query):
     query = query.replace(" ", "+")
     return response
 
-
+# ------------------------------------------------------------------------------------
+# brave results
+# ------------------------------------------------------------------------------------
 
 def brave_results(query):
     query = urllib.parse.quote_plus(query)
@@ -57,6 +64,7 @@ def brave_results(query):
     # replace whitespace with +
     query = query.replace(" ", "+")
     return response2
+
 # ------------------------------------------------------------------------------------
 # parsing results 
 # ------------------------------------------------------------------------------------
@@ -100,18 +108,22 @@ def parse_results(response):
 # ------------------------------------------------------------------------------------
 # dooing google search
 # ------------------------------------------------------------------------------------
+
 def google_search(query):
     response = get_results(query)
     return parse_results(response)
-# ------------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------------
 # home function
 # ------------------------------------------------------------------------------------
+
 def home(request):
     return render(request, 'core/home.html')
+
 # ------------------------------------------------------------------------------------
 # brave search
 # ------------------------------------------------------------------------------------
+
 def brave_search(response2):
     output2 = []
     results2 = response2.html.find('#side-right')
@@ -150,12 +162,15 @@ def brave_search(response2):
 # ------------------------------------------------------------------------------------
 # brave search function
 # ------------------------------------------------------------------------------------
+
 def search_1(query):
     response2 = brave_results(query)
     return brave_search(response2)
+
 # ------------------------------------------------------------------------------------
 # main search function
 # ------------------------------------------------------------------------------------
+
 def search(request):
     results = None
     brave__results = None
@@ -173,6 +188,6 @@ def search(request):
     return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
     
 # ------------------------------------------------------------------------------------
-# remove return print from console
+# 
 # ------------------------------------------------------------------------------------
 
