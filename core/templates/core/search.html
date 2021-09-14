@@ -30,20 +30,16 @@
             padding: 0.5em 0px 0.25em;
             line-height: 1;
         }
-
         #side-right {
             width: 370px;
         }
-
         .section {
             margin-top: 74px;
             margin-bottom: 15px;
         }
-
         .section:last-child {
             margin-left: 2vw;
         }
-
         .infobox {
             border: none;
             border: solid 0px #E2E8ED;
@@ -54,19 +50,16 @@
             padding: 0px;
             transition: 0.1s ease-in-out;
         }
-
         .infobox-header {
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
             padding: 0.8rem;
         }
-
         .infobox-header-text {
             padding-right: 1.2rem;
             padding-top: 1.2rem;
         }
-
         .infobox-title {
             font-size: 17px;
             font-family: 'Poppins', arial, sans-serif;
@@ -75,15 +68,13 @@
             word-break: break-all;
             padding: 21px;
         }
-
         .infobox-description {
             color: var(--page-color);
             margin-top: 0.6rem;
             font-size: 0.66rem;
             padding: 0px 20px;
         }
-
-        .infobox-thumbnail .thumb img {
+        .infobox-thumbnail .thumb  img {
             height: 100px;
             width: 100px;
             object-fit: contain;
@@ -94,20 +85,17 @@
             align-items: center;
             border-radius: 8px;
         }
-
         .infobox .body {
             font-size: 0.86rem;
             color: var(--page-color);
             padding: 0.8rem;
         }
-
         #infobox .infobox-attr {
             font-size: 0.76rem;
             margin-bottom: 5px;
             color: #27292f;
             display: flex;
         }
-
         .infobox-attr-name {
             min-width: 150px;
             max-width: 150px;
@@ -117,8 +105,8 @@
         .mb-6 {
             margin-bottom: 6px;
         }
-
-
+       
+ 
         .fa-search {
             font-size: 20px;
             color: red;
@@ -131,291 +119,259 @@
         .buttons {
             margin-top: 30px;
         }
-
         @media (max-width: 990px) {
             #side-right {
                 width: 89%;
             }
         }
-
-        @media screen and (min-width:0px) and (max-width: 430px) {
+        @media screen and (min-width:0px) and (max-width: 430px){
             #side-right {
                 width: 98%;
             }
         }
-
-        @media screen and (min-width: 1200px) {
-
-            .container,
-            .container-lg,
-            .container-md,
-            .container-sm,
-            .container-xl,
-            .container-xxl {
-                max-width: 1212px !important;
-                margin-left: 179px;
-            }
+        @media screen and (min-width: 1200px){
+        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            max-width: 1212px !important;
+            margin-left: 179px;
         }
+    }
 
         /* responsive */
     </style>
 
     <style>
         .searchform-container {
-            margin-left: 0;
-            width: 100%;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
+          margin-left: 0;
+          width: 100%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+      }
         #searchform {
-            position: relative;
-            display: flex;
-            margin-bottom: 10px;
-            max-width: inherit;
-            align-items: center;
-            z-index: 3;
-            height: 56px !important;
-            width: 90%;
-            border: var(--border-color);
-            border-radius: 8px;
-            box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
-            background-color: var(--input-color);
-            transition: all 0.1s ease-in-out;
-        }
-
-        #search-icon.no-display {
-            display: flex !important;
-            transition: all 0.1s ease-in-out;
-            border-radius: 8px;
-        }
-
-        #search-icon {
-            opacity: 0.5 !important;
-            background: var(--input-color);
-            transition: all 0.1s ease-in-out;
-        }
-
-        #search-icon,
-        #back-arrow {
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            min-width: 46px !important;
-            order: 1;
-            z-index: 3;
-            color: var(--input-color);
-            transition: all 0.1s ease-in-out;
-        }
-
-        #query {
-            flex-grow: 1;
-            width: auto;
-            height: 100%;
-            order: 2;
-            border: none;
-            outline: none;
-            box-shadow: none;
-            color: var(--page-color);
-            background-color: var(--input-color);
-            border-radius: 8px;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            padding: 8px 18px;
-            padding-left: 0px !important;
-            transition: all 0.1s ease-in-out;
-        }
-
-        .form-input {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background: var(--search-form);
-            background-image: none;
-            border: .05rem solid #bcc3ce;
-            border-radius: .1rem;
-            color: var(--page-color);
-            display: block;
-            font-size: .8rem;
-            height: 1.8rem;
-            line-height: 1.2rem;
-            max-width: 100%;
-            outline: 0;
-            padding: .25rem .4rem;
-            position: relative;
-            transition: .2s, border .2s, box-shadow .2s, color .2s;
-            width: 100%;
-            transition: all 0.1s ease-in-out;
-        }
-
-        @media screen and (min-width: 1000px) {
-            .searchform-container {
-                padding-left: 4rem;
-                padding-right: 5rem;
-            }
-
-            #searchform {
-                width: 62%;
-                box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
-            }
-        }
-    </style>
+          position: relative;
+          display: flex;
+          margin-bottom: 10px;
+          max-width: inherit;
+          align-items: center;
+          z-index: 3;
+          height: 56px !important;
+          width: 90%;
+          border: var(--border-color);
+          border-radius: 8px;
+          box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+          background-color: var(--input-color);
+          transition: all 0.1s ease-in-out;
+      }
+      #search-icon.no-display {
+          display: flex !important;
+          transition: all 0.1s ease-in-out;
+          border-radius: 8px;
+      }
+      #search-icon {
+          opacity: 0.5 !important;
+          background: var(--input-color);
+          transition: all 0.1s ease-in-out;
+      }
+      #search-icon, #back-arrow {
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          min-width: 46px !important;
+          order: 1;
+          z-index: 3;
+          color: var(--input-color);
+          transition: all 0.1s ease-in-out;
+      }
+      #query {
+          flex-grow: 1;
+          width: auto;
+          height: 100%;
+          order: 2;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          color: var(--page-color);
+          background-color: var(--input-color);
+          border-radius: 8px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          padding: 8px 18px;
+          padding-left: 0px !important;
+          transition: all 0.1s ease-in-out;
+      }
+      .form-input {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background:  var(--search-form);
+          background-image: none;
+          border: .05rem solid #bcc3ce;
+          border-radius: .1rem;
+          color: var(--page-color);
+          display: block;
+          font-size: .8rem;
+          height: 1.8rem;
+          line-height: 1.2rem;
+          max-width: 100%;
+          outline: 0;
+          padding: .25rem .4rem;
+          position: relative;
+          transition: .2s,border .2s,box-shadow .2s,color .2s;
+          width: 100%;
+          transition: all 0.1s ease-in-out;
+      }
+      @media screen and (min-width: 1000px) {
+          .searchform-container {
+              padding-left: 4rem;
+              padding-right: 5rem;
+          }
+          #searchform {
+              width: 62%;
+              box-shadow: 0px 2px 8px rgb(37 44 54 / 25%);
+          }
+      }
+          
+      </style>
     <div id="main">
         <h1>LOGO</h1>
         <div class="searchform-container">
             <form class="form" action="/search" method="GET" id="searchform">
-                <span id="search-icon" class="no-display">
-                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z"
-                            fill="url(#paint0_linear)"></path>
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="16.6209" y1="16.6208" x2="-1.90605" y2="3.18655"
-                                gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#BF14A2"></stop>
-                                <stop offset="1" stop-color="#F73A1C"></stop>
+                  <span id="search-icon" class="no-display">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z" fill="url(#paint0_linear)"></path>
+                          <defs>
+                            <linearGradient id="paint0_linear" x1="16.6209" y1="16.6208" x2="-1.90605" y2="3.18655" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#BF14A2"></stop>
+                            <stop offset="1" stop-color="#F73A1C"></stop>
                             </linearGradient>
-                        </defs>
-                    </svg>
-                </span>
-                <input name="query" id='query' type="text" class="form-input"
-                    placeholder="Search the world without being tracked…" name="q" value="{{ request.GET.query}}"
-                    autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Search"
-                    title="Search" aria-autocomplete="both" aria-haspopup="false" maxlength="2048" autofocus="">
-                <input name="source" value="web" type="hidden">
-                <div id="autocomplete" class=" svelte-ir7f0d"></div>
-            </form>
-        </div>
+                          </defs>
+                  </svg>
+              </span>
+              <input name="query" id='query' type="text" class="form-input" placeholder="Search the world without being tracked…" name="q" value="{{ request.GET.query}}" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Search" title="Search" aria-autocomplete="both" aria-haspopup="false" maxlength="2048" autofocus="">
+              <input name="source" value="web" type="hidden">
+             <div id="autocomplete" class=" svelte-ir7f0d"></div></form>
+          </div>
         <br>
     </div>
 
-
+    
     {% if data %}
-    <div class="container">
+<div class="container">
         <div class="row">
             <!-- {% for item in data %}
             <p>{{ item.featured_answer }}</p>
             {% endfor %} -->
             <div id="result" class="section col-xs-12 col-sm-11 col-lg-7">
-                {% for item in data %}
-                <style>
-                    .snippet {
-                        padding-top: 1.2rem;
-                        padding-right: 22px;
-                        padding-bottom: 1.7rem;
-                        padding-left: 22px;
-                        background-color: var(--snippet-color);
-                        max-width: 703px;
-                        border-radius: 8px;
-                        padding-bottom: 2rem;
-                        margin-bottom: 0.8rem;
-                        transition: 0.3s;
-                    }
+            {% for item in data %}
+            <style>
+                .snippet {
+                    padding-top: 1.2rem;
+                    padding-right: 22px;
+                    padding-bottom: 1.7rem;
+                    padding-left: 22px;
+                    background-color: var(--snippet-color);
+                    max-width: 703px;
+                    border-radius: 8px;
+                    padding-bottom: 2rem;
+                    margin-bottom: 0.8rem;
+                    transition: 0.3s;
+                }
 
-                    a {
-                        outline: none !important;
-                        color: var(--link-color);
-                        text-decoration: none;
-                    }
+                a {
+                    outline: none !important;
+                    color: var(--link-color);
+                    text-decoration: none;
+                }
+                a:visited {
+                    color: #8ab4f8;
+                }
 
-                    a:visited {
-                        color: #8ab4f8;
-                    }
+                .snippet-title {
+                    font-family: 'Poppins', arial, sans-serif;
+                    text-rendering: optimizeLegibility;
+                    font-size: 1.26rem;
+                    line-height: 30px;
+                    letter-spacing: -0.02em;
+                    color: var(--link-color);
+                    position: relative;
+                    text-decoration: none;
+                    word-wrap: break-word;
+                    font-weight: 400;
+                    display: block;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
 
-                    .snippet-title {
-                        font-family: 'Poppins', arial, sans-serif;
-                        text-rendering: optimizeLegibility;
-                        font-size: 1.26rem;
-                        line-height: 30px;
-                        letter-spacing: -0.02em;
-                        color: var(--link-color);
-                        position: relative;
-                        text-decoration: none;
-                        word-wrap: break-word;
-                        font-weight: 400;
-                        display: block;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 1;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
+                .favicon {
+                    height: 24px;
+                    width: 25px;
+                    object-fit: cover;
+                    margin-right: 7px;
+                    border-radius: 4px;
+                    color: #1b1b1b;
+                    font-size: 15px;
+                    text-align: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px;
+                    vertical-align: middle;
+                    background-color: transparent;
+                    display: inline-block;
+                }
 
-                    .favicon {
-                        height: 24px;
-                        width: 25px;
-                        object-fit: cover;
-                        margin-right: 7px;
-                        border-radius: 4px;
-                        color: #1b1b1b;
-                        font-size: 15px;
-                        text-align: center;
-                        overflow: hidden;
-                        position: relative;
-                        padding: 0px;
-                        vertical-align: middle;
-                        background-color: transparent;
-                        display: inline-block;
-                    }
+                .snippet-url {
+                    display: flex;
+                    align-items: center;
+                    max-width: 90%;
+                    font-size: 0.96rem;
+                    color: #545c80;
+                    text-rendering: optimizeLegibility;
+                    font-style: normal;
+                    padding: 1.2rem 0 1.3rem;
+                    overflow: hidden;
+                }
 
-                    .snippet-url {
-                        display: flex;
-                        align-items: center;
-                        max-width: 90%;
-                        font-size: 0.96rem;
-                        color: #545c80;
-                        text-rendering: optimizeLegibility;
-                        font-style: normal;
-                        padding: 1.2rem 0 1.3rem;
-                        overflow: hidden;
-                    }
+                .netloc {
+                    color: #6d78a0;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    text-decoration: none;
+                }
 
-                    .netloc {
-                        color: #6d78a0;
-                        font-weight: 500;
-                        white-space: nowrap;
-                        text-decoration: none;
-                    }
+                .url-path {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-decoration: none;
+                }
 
-                    .url-path {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        text-decoration: none;
-                    }
-
-                    .snippet-description {
-                        font-size: 1rem;
-                        font-weight: 400;
-                        color: var(--page-color);
-                        margin-bottom: 0;
-                        word-wrap: break-word;
-                        letter-spacing: -0.008em;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 6;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        display: flex;
-                    }
-                
-                    @media screen and (min-width: 1400px) {
-
-                        .container,
-                        .container-lg,
-                        .container-md,
-                        .container-sm,
-                        .container-xl,
-                        .container-xxl {
-                            max-width: 1212px !important;
-                        }
-
-                    }
-                </style>
+                .snippet-description {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: var(--page-color);
+                    margin-bottom: 0;
+                    word-wrap: break-word;
+                    letter-spacing: -0.008em;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    display: flex;
+                }
+                @media screen and (min-width: 1400px){ 
+                .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                    max-width: 1212px !important;
+                }
+                       
+            }
+            </style>
                 <div class="snippet fdb " data-loc="main" data-pos="0" data-type="web" data-ref-pos="0" id="snippets">
                     <a href="{{ item.link }}" class="result-header" target="_self">
-                        <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}"
-                                loading="lazy" width="16" height="16">{{ item.title }}
+                        <span class="snippet-title"><img alt="🌐" class="favicon" src="{{ item.favicon }}" loading="lazy"
+                                width="16" height="16">{{ item.title }}
                         </span>
                     </a>
                     <cite class="snippet-url">
@@ -428,77 +384,72 @@
                         <img src="{{ item.yt_url }}" width="25%" height="100%" style="border-radius: 8px;">
                         {% endif %}
                     </p>
-                </div>
-                {% endfor %}
 
             </div>
-            <!-- side bar -->
-            {% if data2 %}
-            {% for item2 in data2 %}
-            <div id="side-right" class="section col-md-5 col-sm-12">
-                <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox"
-                    data-subtype="generic" data-ref-pos="0">
-                    <div class="infobox-header">
-                        <div class="infobox-header-text">
-                            <a class="infobox-title" href="{{ item2.links }}" target="_self">
-                                {{ item2.title1 }}
-                            </a>
-                            <div class="infobox-description">
-                                {{ item2.description }}
-                            </div>
-                        </div>
-                        <div class="infobox-thumbnail">
-                            <a href="{{ item2.image_url }}" target="_self">
-                                <div class="thumb">
-                                    <img src="{{ item2.image_url }}" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div class="body">
-
-                        <div class="mb-6">
-                            {{ item2.big_description }}
-                        </div>
-
-                    </div>
-
-                    <!-- rating -->
-
-                    <center>
-                        <h2 style="color:var(--page-color)">{{ item2.rating }}</h2>
-                    </center>
-                    <br>
-                    <div class="rating" style="display:flex;padding:0px 20px;">
-                        {% if item2.rating_image%}
-                        <img src="{{ item2.rating_image }}" alt="" class="favicon" width='40' height='40'>
-                        {% else %}
-                        <p></p>
-                        {% endif %}
-                        <!-- rating -->
-                        <p style='padding:0px 20px; color:var(--page-color);'>{{ item2.rating_text }}</p>
-                    </div>
-                    <div class="body">
-                        <div class="attribution text-xs">
-                            Data from
-                            <a href="{{ item2.links }}" id="source">Wikipedia</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            {% endfor %}
+            
         </div>
-        {% endfor %}
-        {% endif %}
-        {% endif %}
+        <!-- side bar -->
+        {% if data2 %}
+        {% for item2 in data2 %}
+        <div id="side-right" class="section col-md-5 col-sm-12">
+            <div id="infobox" class="infobox fdb" data-loc="side" data-pos="0" data-type="infobox" data-subtype="generic" data-ref-pos="0">
+    <div class="infobox-header">
+    <div class="infobox-header-text">
+    <a class="infobox-title" href="{{ item2.links }}" target="_self">
+    {{ item2.title1 }}
+        </a>
+    <div class="infobox-description">
+        {{ item2.description }}
+    </div>
+        </div>
+    <div class="infobox-thumbnail">
+    <a href="{{ item2.image_url }}" target="_self">
+    <div class="thumb" >
+        <img src="{{ item2.image_url }}" alt="">
+    </div>
+    </a>
+    </div>
+    </div>
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-            </script>
-           
+
+    <div class="body">
+
+    <div class="mb-6">
+    {{ item2.big_description }}
+    </div>
+
+    </div>
+
+    <!-- rating -->
+
+    <center><h2 style="color:var(--page-color)">{{ item2.rating }}</h2></center>
+    <br>
+    <div class="rating" style="display:flex;padding:0px 20px;">
+        {% if item2.rating_image%}
+        <img src="{{ item2.rating_image }}" alt="" class="favicon" width='40' height='40'>
+        {% else %}
+        <p></p>
+        {% endif %}
+         <!-- rating -->
+        <p style='padding:0px 20px; color:var(--page-color);'>{{ item2.rating_text }}</p>
+    </div>
+    <div class="body">
+    <div class="attribution text-xs">
+    Data from
+    <a href="{{ item2.links }}" id="source">Wikipedia</a>
+    </div>
+    </div>
+
+        </div>
+        </div>
+</div>
+    {% endfor %}
+    {% endif %}
+{% endif %}
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>
