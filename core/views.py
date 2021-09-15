@@ -54,16 +54,6 @@ def get_results(query):
     query = query.replace(" ", "+")
     return response
 
-# ------------------------------------------------------------------------------------
-# brave results
-# ------------------------------------------------------------------------------------
-
-# def brave_results(query):
-#     query = urllib.parse.quote_plus(query)
-#     response2 = get_source("https://www.google.co.uk/search?q=" + query)
-#     # replace whitespace with +
-#     query = query.replace(" ", "+")
-#     return response2
 
 # ------------------------------------------------------------------------------------
 # parsing results 
@@ -151,12 +141,12 @@ def side_search(response):
             data2['links'] = result2.find('.ruhjFe', first=True).attrs['href']
         except:
             pass
-        try:
-            data2['rating'] = result2.find('.h6', first=True).text
-            data2['rating_image'] = result2.find('.rating-source', first=True).attrs['src']
-            data2['rating_text'] = result2.find('.r .flex-hcenter .text-sm', first=True).text
-        except:
-            pass
+        # try:
+        #     data2['rating'] = result2.find('.h6', first=True).text
+        #     data2['rating_image'] = result2.find('.rating-source', first=True).attrs['src']
+        #     data2['rating_text'] = result2.find('.r .flex-hcenter .text-sm', first=True).text
+        # except:
+        #     pass
          # wikipedia image scraping
         try:
             # image
