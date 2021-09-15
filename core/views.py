@@ -144,7 +144,7 @@ def brave_search(response2):
         except:
             pass
         try:
-            data2['links'] = result2.find('.osrp-blk', first=True).attrs['href']
+            data2['links'] = result2.find('.ruhjFe', first=True).attrs['href']
         except:
             pass
         try:
