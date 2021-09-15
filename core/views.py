@@ -95,6 +95,7 @@ def parse_results(response):
         data['cite'] = data['cite'].replace("https://", "")
         data['cite'] = data['cite'].replace("http://", "")
         data['cite'] = data['cite'].replace("www.", "")
+        data['cite'] = data['cite'].replace("...", "")
         # close cite functions
         # youtube video image url
         if "/watch?v" in data['link']:
