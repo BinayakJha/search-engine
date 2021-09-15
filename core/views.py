@@ -141,6 +141,7 @@ def brave_search(response2):
             pass
         try:
             data2['big_description'] = result2.find('.kno-rdesc', first=True).text
+            data2['big_description'] = data2['big_description'].replace("Description", "")
         except:
             pass
         try:
