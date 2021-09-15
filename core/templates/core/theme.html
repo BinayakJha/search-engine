@@ -38,7 +38,41 @@
             --input-color: #17161E !important;
             --border-color: 2px solid #737373;
         }
-        
+        /* autocomlete */
+         /* autocomplete */
+      .autocomplete-items {
+        position: absolute;
+        border: var(--border-color);
+        /* border-top: none; */
+        z-index: 99;
+        top: 116%;
+        left: -3px;
+        right: 0;
+        box-shadow: 0px 8px 8px rgb(37 44 54 / 25%);
+        text-align: left;
+        border-radius: 8px;
+        width: 101%;
+    }
+
+        .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: var(--input-color); 
+        border-bottom: 1px solid transparent; 
+        border-radius: 8px;
+        }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+        background-color: var(--snippet-color); 
+        color:var(--page-color);
+        }
+
+        /*when navigating through the items using the arrow keys:*/
+        .autocomplete-active {
+        background-color:#676768 !important; 
+        color: var(--page-color); 
+        }
     </style>
 </head>
 <body>
