@@ -129,9 +129,6 @@ def brave_search(response2):
     # try:
     results2 = response2.html.find('.liYKde')
     # except:
-    
-    if results2 == []:
-        results2 = response2.html.find('.I6TXqe')
     for result2 in results2:
         data2 = dict()
         try:
