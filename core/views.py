@@ -58,12 +58,12 @@ def get_results(query):
 # brave results
 # ------------------------------------------------------------------------------------
 
-def brave_results(query):
-    query = urllib.parse.quote_plus(query)
-    response2 = get_source("https://www.google.co.uk/search?q=" + query)
-    # replace whitespace with +
-    query = query.replace(" ", "+")
-    return response2
+# def brave_results(query):
+#     query = urllib.parse.quote_plus(query)
+#     response2 = get_source("https://www.google.co.uk/search?q=" + query)
+#     # replace whitespace with +
+#     query = query.replace(" ", "+")
+#     return response2
 
 # ------------------------------------------------------------------------------------
 # parsing results 
@@ -125,10 +125,10 @@ def home(request):
 # brave search
 # ------------------------------------------------------------------------------------
 
-def brave_search(response2):
+def side_search(response):
     output2 = []
     # try:
-    results2 = response2.html.find('.liYKde')
+    results2 = response.html.find('.liYKde')
     # except:
     for result2 in results2:
         data2 = dict()
@@ -182,8 +182,8 @@ def brave_search(response2):
 # ------------------------------------------------------------------------------------
 
 def search_1(query):
-    response2 = brave_results(query)
-    return brave_search(response2)
+    response2 = get_results(query)
+    return side_search(response2)
 
 # ------------------------------------------------------------------------------------
 # main search function
