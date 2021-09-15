@@ -129,10 +129,22 @@ def brave_search(response2):
     results2 = response2.html.find('.liYKde')
     for result2 in results2:
         data2 = dict()
-        data2['title1'] = result2.find('.qrShPb', first=True).text
-        # data2['description'] = result2.find('.wwUB2c', first=True).text
-        data2['big_description'] = result2.find('.kno-rdesc', first=True).text
-        data2['links'] = result2.find('.ruhjFe', first=True).attrs['href']
+        try:
+            data2['title1'] = result2.find('.qrShPb', first=True).text
+        except:
+            pass
+        try:
+            data2['description'] = result2.find('.wwUB2c', first=True).text
+        except:
+            pass
+        try:
+            data2['big_description'] = result2.find('.kno-rdesc', first=True).text
+        except:
+            pass
+        try:
+            data2['links'] = result2.find('.ruhjFe', first=True).attrs['href']
+        except:
+            pass
         try:
             data2['rating'] = result2.find('.h6', first=True).text
             data2['rating_image'] = result2.find('.rating-source', first=True).attrs['src']
@@ -187,4 +199,3 @@ def search(request):
 # ------------------------------------------------------------------------------------
 # 
 # ------------------------------------------------------------------------------------
-
