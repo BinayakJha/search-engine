@@ -60,7 +60,7 @@ def get_results(query):
 
 def brave_results(query):
     query = urllib.parse.quote_plus(query)
-    response2 = get_source("https://search.brave.com/search?q=" + query)
+    response2 = get_source("https://www.google.co.uk/search?q=" + query)
     # replace whitespace with +
     query = query.replace(" ", "+")
     return response2
@@ -126,13 +126,13 @@ def home(request):
 
 def brave_search(response2):
     output2 = []
-    results2 = response2.html.find('#side-right')
+    results2 = response2.html.find('.liYKde')
     for result2 in results2:
         data2 = dict()
-        data2['title1'] = result2.find('.infobox-title', first=True).text
-        data2['description'] = result2.find('.infobox-description', first=True).text
-        data2['big_description'] = result2.find('.body .mb-6', first=True).text
-        data2['links'] = result2.find('.links a', first=True).attrs['href']
+        data2['title1'] = result2.find('.qrShPb', first=True).text
+        # data2['description'] = result2.find('.wwUB2c', first=True).text
+        data2['big_description'] = result2.find('.kno-rdesc', first=True).text
+        data2['links'] = result2.find('.ruhjFe', first=True).attrs['href']
         try:
             data2['rating'] = result2.find('.h6', first=True).text
             data2['rating_image'] = result2.find('.rating-source', first=True).attrs['src']
@@ -180,10 +180,7 @@ def search(request):
         results= google_search(query)
 
         # Fetch brave data
-        try:
-            brave__results = search_1(query)
-        except:
-            pass
+        brave__results = search_1(query)
     replit.clear()
     return render(request, 'core/search.html', {'data': results, 'data2':brave__results})
     
