@@ -72,7 +72,7 @@ def parse_results(response):
 
     output = []
     for result in results:
-        data = dict()
+        data = {}
         data['title'] = result.find(css_identifier_title, first=True).text
         data['link'] = result.find(css_identifier_link, first=True).attrs['href']
         data['favicon'] = "https://www.google.com/s2/favicons?sz=64&domain_url=" + data['link']
@@ -121,7 +121,7 @@ def side_search(response):
     results2 = response.html.find('.liYKde')
     # except:
     for result2 in results2:
-        data2 = dict()
+        data2 = {}
         try:
             data2['title1'] = result2.find('.qrShPb', first=True).text
         except:
