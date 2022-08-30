@@ -8,7 +8,7 @@ Website which works like a search engine. Is user scraping concept to scrape the
 At first clone the repository
 
 ```
-git clone https://github.com/BinayakJha/ImageScraper.git
+git clone https://github.com/BinayakJha/search-engine.git
 ```
 
 Now after you have cloned then you should have Python installed.
